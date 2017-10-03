@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
-class Front_Desk {
-    constructor() {
+class Front_Desk extends Component {
+    constructor(props) {
         super(props)
 
         this.state = {

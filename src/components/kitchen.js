@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
-class Kitchen {
-    constructor() {
+class Kitchen extends Component {
+    constructor(props) {
         super(props)
 
         this.state = {

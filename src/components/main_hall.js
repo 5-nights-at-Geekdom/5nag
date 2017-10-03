@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Main_Hall {
+class Main_Hall extends Component {
     constructor() {
         super(props)
 

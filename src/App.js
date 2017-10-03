@@ -5,10 +5,12 @@ import Menu from './components/menu'
 
 class App extends Component {
 
-    constructor(){
+    constructor(props) {
+        super(props)
         this.state = {
             time: 0,
         }
+
     }
   render() {
     return (

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Corner {
+class Corner extends Component {
     constructor() {
         super(props)
 

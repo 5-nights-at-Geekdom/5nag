@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Lounge {
+class Lounge extends Component {
     constructor() {
         super(props)
 
