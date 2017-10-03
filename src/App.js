@@ -4,6 +4,12 @@ import Menu from './components/menu'
 
 
 class App extends Component {
+
+    constructor(){
+        this.state = {
+            time: 0,
+        }
+    }
   render() {
     return (
       <div className="App">
