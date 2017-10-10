@@ -1,27 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Menu from './components/menu'
+import Menu from './components/menu';
+import Game from './components/game';
 
 
-class App extends Component {
+const App = () => {
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-        time: 0,
-    }
-  }
-  render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to 5NAG</h1>
         </header>
         <Menu />
+        <Game />
       </div>
     );
-  }
 }
 
 export default App;
