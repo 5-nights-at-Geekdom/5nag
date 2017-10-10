@@ -8,4 +8,7 @@ class Map extends Component {
             active_cam: 1,
         }
     }
+
+    //map needs to be included on all components
+    //map will have all buttons to change component states
 }
