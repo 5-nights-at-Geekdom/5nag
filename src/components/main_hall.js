@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 class Main_Hall extends Component {
-    constructor() {
+    constructor(props) {
         super(props)
 
         this.state = {
