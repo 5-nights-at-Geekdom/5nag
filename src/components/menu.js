@@ -11,4 +11,6 @@ const menu = () => {
   )
 }
 
+// Start game, Options, Load game from cookies
+
 export default menu
