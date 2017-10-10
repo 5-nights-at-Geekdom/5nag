@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import Menu from './components/menu';
 import Game from './components/game';
 
