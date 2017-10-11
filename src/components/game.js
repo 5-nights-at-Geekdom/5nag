@@ -96,7 +96,7 @@ class Game extends Component {
     render () {
         console.log(this.state);
         return(
-            <div>hello game</div>
+            <div id="gameBackground"></div>
         )
     }
 }
