@@ -8,6 +8,11 @@ class Kitchen extends Component {
             enemy: false,
         }
     }
+    render(){
+    	return(
+    	<div> THIS IS THE KITCHEN YO</div>
+    	)
+    }
 }
 
 export default Kitchen

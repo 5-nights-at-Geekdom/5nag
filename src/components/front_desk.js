@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import Kitchen from './kitchen'
 class Front_Desk extends Component {
     constructor(props) {
         super(props)
@@ -7,6 +7,28 @@ class Front_Desk extends Component {
         this.state = {
             enemy: false,
         }
+    }
+    getCamFeed(){
+    	console.log('hi daniel')
+    	const cam = this.props.camFeed;
+
+    	switch(cam) {
+    		case 1:
+    		return <Kitchen />
+    		
+    		
+    	}
+
+    }
+    render(){
+    	console.log(this.props.camFeed)
+    	return (
+		  <div id="gameBackground">
+          	<div id="camFeedView">
+          	{this.getCamFeed()}       			
+          	</div>
+        </div>
+    	)
     }
 }
 
