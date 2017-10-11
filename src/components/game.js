@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Front_Desk from './front_desk'
 
 class Game extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Game extends Component {
             enemyPosition: 6,
             counter: 0,
             level: 1,
+            currentCam: 1,
             ping:{
                 charges: 1,
                 cooldown: 13,
@@ -96,7 +98,9 @@ class Game extends Component {
     render () {
         console.log(this.state);
         return(
-            <div>hello game</div>
+          <div>
+            <Front_Desk camFeed={this.state.currentCam} />
+          </div>
         )
     }
 }
