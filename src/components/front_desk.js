@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 import Kitchen from './kitchen'
+import Corner from './corner'
+import Lounge from './lounge'
+import Main_Hall from './main_hall'
+
 class Front_Desk extends Component {
     constructor(props) {
         super(props)
@@ -15,7 +19,7 @@ class Front_Desk extends Component {
     	switch(cam) {
     		case 1:
     		return <Kitchen />
-    		
+
     		
     	}
 
