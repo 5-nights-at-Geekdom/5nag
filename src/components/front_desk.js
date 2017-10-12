@@ -21,6 +21,8 @@ class Front_Desk extends Component {
     		return <Kitchen />
     		case 2: 
     		return <Main_Hall />
+    		case 3:
+    		return <Corner />
     		
     	}
 

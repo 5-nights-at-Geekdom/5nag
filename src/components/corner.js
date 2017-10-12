@@ -8,6 +8,11 @@ class Corner extends Component {
             enemy: false,
         }
     }
+    render(){
+    	return(
+    		<div className="componentView" id="corner"></div>
+    	)
+    }
 }
 
 export default Corner
