@@ -8,6 +8,11 @@ class Lounge extends Component {
             enemy: false,
         }
     }
+    render(){
+    	return(
+    		<div className="componentView" id="lounge"></div>
+    	)
+    }
 }
 
 export default Lounge
