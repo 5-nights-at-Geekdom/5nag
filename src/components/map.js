@@ -8,15 +8,18 @@ class Map extends Component {
             active_cam: 1,
         }
     }
+    handleClick(camNum){
+    	return this.setState({active_cam: camNum})
+    }
     render(){
     	return(
     		<div id="map">
-    			<button>Cam1</button>
-    			<button>Cam2</button>
-    			<button>Cam3</button>
-    			<button>Cam4</button>
-    			<button>Cam5</button>
-    			<button>Ping</button>
+    			<button onClick={this.handleClick(1)}>Cam1</button>
+    			<button onClick={this.handleClick(2)}>Cam2</button>
+    			<button onClick={this.handleClick(3)}>Cam3</button>
+    			<button onClick={this.handleClick(4)}>Cam4</button>
+    			<button onClick={this.handleClick(5)}>Cam5</button>
+    			<button onClick={this.handleClick(1)}>Ping</button>
     		</div>
     	)
     }
