@@ -8,7 +8,14 @@ class Map extends Component {
             active_cam: 1,
         }
     }
+    render(){
+    	return(
+    		<div id="map"></div>
+    	)
+    }
 
     //map needs to be included on all components
     //map will have all buttons to change component states
 }
+
+export default Map

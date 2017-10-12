@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Front_Desk from './front_desk'
+import Map from './map'
 
 class Game extends Component {
     constructor(props) {
@@ -98,8 +99,9 @@ class Game extends Component {
     render () {
         console.log(this.state);
         return(
-          <div>
+          <div id='mainContainer'>
             <Front_Desk camFeed={this.state.currentCam} />
+            <Map />
           </div>
         )
     }
