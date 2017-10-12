@@ -10,7 +10,14 @@ class Map extends Component {
     }
     render(){
     	return(
-    		<div id="map"></div>
+    		<div id="map">
+    			<button>Cam1</button>
+    			<button>Cam2</button>
+    			<button>Cam3</button>
+    			<button>Cam4</button>
+    			<button>Cam5</button>
+    			<button>Ping</button>
+    		</div>
     	)
     }
 
