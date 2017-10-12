@@ -27,7 +27,7 @@ class Front_Desk extends Component {
     render(){
     	console.log(this.props.camFeed)
     	return (
-		  <div id="gameBackground">
+		 <div id="gameBackground">
           	<div id="camFeedView">
           	{this.getCamFeed()}       			
           	</div>
