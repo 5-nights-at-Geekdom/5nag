@@ -19,7 +19,8 @@ class Front_Desk extends Component {
     	switch(cam) {
     		case 1:
     		return <Kitchen />
-
+    		case 2: 
+    		return <Main_Hall />
     		
     	}
 

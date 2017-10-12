@@ -8,6 +8,11 @@ class Main_Hall extends Component {
             enemy: false,
         }
     }
+    render(){
+    	return(
+    		<div className="componentView" id="mainHall"></div>
+    	)
+    }
 }
 
 export default Main_Hall
