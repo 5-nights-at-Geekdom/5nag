@@ -3,6 +3,7 @@ import Kitchen from './kitchen'
 import Corner from './corner'
 import Lounge from './lounge'
 import Main_Hall from './main_hall'
+import Creepy_Hallway from './creepy_hallway'
 
 class Front_Desk extends Component {
     constructor(props) {
@@ -25,6 +26,8 @@ class Front_Desk extends Component {
     		return <Corner />
     		case 4: 
     		return <Lounge />
+    		case 5:
+    		return <Creepy_Hallway />
     		
     	}
 
