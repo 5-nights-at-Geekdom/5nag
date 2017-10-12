@@ -10,7 +10,7 @@ class Kitchen extends Component {
     }
     render(){
     	return(
-    	<div> THIS IS THE KITCHEN YO</div>
+    		<div className="componentView" id="kitchen"></div>
     	)
     }
 }

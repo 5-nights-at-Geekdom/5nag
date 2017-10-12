@@ -7,7 +7,11 @@ class Creepy_Hallway extends Component {
         this.state = {
             enemy: false,
         }
-
+    }
+    render(){
+    	return(
+    		<div className="componentView" id="creepyHallway"></div>
+    	)
     }
 }
 
