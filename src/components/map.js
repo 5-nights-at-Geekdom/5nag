@@ -5,22 +5,23 @@ class Map extends Component {
         super(props)
 
         this.state = {
-            active_cam: 1,
+            currentCam: 1,
         }
     }
     handleClick(camNum){
     	console.log("the CamNum is " + camNum)
-    	this.setState({active_cam: camNum})
+    	this.setState({currentCam: camNum})
+        console.log(this.state.currentCam)
     }
     render(){
     	return(
     		<div id="map">
-    			<button onClick={this.handleClick(1)}>Cam1</button>
-    			<button onClick={this.handleClick(2)}>Cam2</button>
-    			<button onClick={this.handleClick(3)}>Cam3</button>
-    			<button onClick={this.handleClick(4)}>Cam4</button>
-    			<button onClick={this.handleClick(5)}>Cam5</button>
-    			<button onClick={this.handleClick(1)}>Ping</button>
+    			<button onClick={() => this.handleClick(1)}>Cam1</button>
+    			<button onClick={() => this.handleClick(2)}>Cam2</button>
+    			<button onClick={() => this.handleClick(3)}>Cam3</button>
+    			<button onClick={() => this.handleClick(4)}>Cam4</button>
+    			<button onClick={() => this.handleClick(5)}>Cam5</button>
+    			<button onClick={() => this.handleClick(1)}>Ping</button>
     		</div>
     	)
     }
