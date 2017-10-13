@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Front_Desk from './front_desk'
+import FrontDesk from './front_desk'
 import Map from './map'
 
 class Game extends Component {
@@ -105,7 +105,7 @@ class Game extends Component {
         console.log(this.state);
         return(
           <div id='mainContainer'>
-            <Front_Desk camFeed={this.state.currentCam} />
+            <FrontDesk camFeed={this.state.currentCam} />
             <Map handleClick={this.handleClick.bind(this)} />
           </div>
         )
