@@ -9,7 +9,8 @@ class Map extends Component {
         }
     }
     handleClick(camNum){
-    	return this.setState({active_cam: camNum})
+    	console.log("the CamNum is " + camNum)
+    	this.setState({active_cam: camNum})
     }
     render(){
     	return(
