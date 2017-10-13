@@ -14,7 +14,6 @@ class Front_Desk extends Component {
         }
     }
     getCamFeed(){
-    	console.log('hi daniel')
     	const cam = this.props.camFeed;
 
     	switch(cam) {
