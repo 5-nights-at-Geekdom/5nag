@@ -19,6 +19,11 @@ class Game extends Component {
             },
         }
     }
+    handleClick(camNum){
+      console.log("the CamNum is " + camNum)
+      this.setState({currentCam: camNum})
+      console.log(this.state.currentCam)
+    }
     enemyMovement(){
        switch (this.state.level) {
           case 1:
@@ -101,7 +106,7 @@ class Game extends Component {
         return(
           <div id='mainContainer'>
             <Front_Desk camFeed={this.state.currentCam} />
-            <Map />
+            <Map handleClick={this.handleClick.bind(this)} />
           </div>
         )
     }
