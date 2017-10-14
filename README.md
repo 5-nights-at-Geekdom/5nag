@@ -1,11 +1,13 @@
 Agenda Items:
-	start game button to load game
-	front desk view showing with component view on game component load
-	get transitions working for cameras
-		show map on all game components children
-		add buttons to map
-		buttons link to appropriate rooms
-		clicking on rooms update component view
+	Add win screen component and logic.
+	build out ping logic.
+	build out level transition logic. 
+	finish enemy movement logic. 
+	build death logic.
+	get geekdom pictures added to project and photoshopped
+	create enemy sprite based off pictures and have it follow enemy logic. 
+	To be Continued....
+
 
 To Get Up and Running
   - Clone the repo from https://github.com/5-nights-at-Geekdom/5nag
