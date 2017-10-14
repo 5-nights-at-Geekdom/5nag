@@ -20,9 +20,11 @@ class Game extends Component {
         }
     }
     handleClick(camNum){
-      console.log("the CamNum is " + camNum)
+      this.enemyMovement()
       this.setState({currentCam: camNum})
-      console.log(this.state.currentCam)
+      this.enemyPresentInRoom()
+      console.log("the enemy is in room " + this.state.enemyPosition)
+      console.log("=================================================")
     }
     enemyMovement(){
        switch (this.state.level) {
@@ -98,11 +100,33 @@ class Game extends Component {
 
        }
     }
-    componentDidMount(){
-        this.enemyMovement()
+    enemyPresentInRoom(){
+      if (this.state.enemyPosition === this.state.currentCam){
+        switch (this.state.currentCam) {
+
+          case 1:
+          console.log("I can see the enemy on cam 1")
+          break;
+          case 2:
+          console.log("I can see the enemy on cam 2")
+          break;
+          case 3:
+          console.log("I can see the enemy on cam 3")
+          break;
+          case 4:
+          console.log("I can see the enemy on cam 4")
+          break;
+          case 5:
+          console.log("I can see the enemy on cam 5")
+          break;
+
+          default:
+          console.log("no enemy, all clear!!!")
+        }
+      }
     }
+
     render () {
-        console.log(this.state);
         return(
           <div id='mainContainer'>
             <FrontDesk camFeed={this.state.currentCam} />

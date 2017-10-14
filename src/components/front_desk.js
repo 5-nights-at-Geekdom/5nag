@@ -18,14 +18,19 @@ class Front_Desk extends Component {
 
     	switch(cam) {
     		case 1:
+            console.log("looking at cam 1: Kitchen")
     		return <Kitchen />
     		case 2:
+            console.log("looking at cam 2: MainHall")
     		return <MainHall />
     		case 3:
+            console.log("looking at cam 3: Corner")
     		return <Corner />
     		case 4:
+            console.log("looking at cam 4: Lounge")
     		return <Lounge />
     		case 5:
+            console.log("looking at cam 5: CreepyHallway")
     		return <CreepyHallway />
         default:
         break;
@@ -34,7 +39,6 @@ class Front_Desk extends Component {
 
     }
     render(){
-    	console.log(this.props.camFeed)
     	return (
 		 <div id="gameBackground">
           	<div id="camFeedView">
