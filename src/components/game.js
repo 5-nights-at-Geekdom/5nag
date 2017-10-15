@@ -22,9 +22,9 @@ class Game extends Component {
     handleClick(camNum){
       this.enemyMovement()
       this.setState({currentCam: camNum})
-      this.enemyPresentInRoom()
-      console.log("the enemy is in room " + this.state.enemyPosition)
       console.log("=================================================")
+      console.log("the enemy is in room " + this.state.enemyPosition)
+      this.enemyPresentInRoom()
     }
     enemyMovement(){
        switch (this.state.level) {
@@ -121,8 +121,11 @@ class Game extends Component {
           break;
 
           default:
-          console.log("no enemy, all clear!!!")
+         
         }
+      } else {
+        
+      console.log("no enemy, all clear!!!")
       }
     }
 
