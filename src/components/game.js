@@ -23,8 +23,8 @@ class Game extends Component {
       this.setState({currentCam: camNum})
       console.log("=================================================")
       console.log("the enemy is in room " + this.state.enemyPosition)
-      this.enemyPresentInRoom()
     }
+
     enemyMovement(){
        switch (this.state.level) {
           case 1:
@@ -101,30 +101,9 @@ class Game extends Component {
     }
     enemyPresentInRoom(){
       if (this.state.enemyPosition === this.state.currentCam){
-        switch (this.state.currentCam) {
-
-          case 1:
-          console.log("I can see the enemy on cam 1")
-          break;
-          case 2:
-          console.log("I can see the enemy on cam 2")
-          break;
-          case 3:
-          console.log("I can see the enemy on cam 3")
-          break;
-          case 4:
-          console.log("I can see the enemy on cam 4")
-          break;
-          case 5:
-          console.log("I can see the enemy on cam 5")
-          break;
-
-          default:
-
-        }
+          return true;
       } else {
-
-      console.log("no enemy, all clear!!!")
+          return false;
       }
     }
 
@@ -151,10 +130,10 @@ class Game extends Component {
 
 
         }
-        if (this.state.time % 5 == 0) {
+        if (this.state.time % 5 === 0) {
             this.enemyMovement()
         }
-        if (this.state.time % 20 == 0) {
+        if (this.state.time % 20 === 0) {
             let newHour = this.state.gametime + 1
             this.setState({gametime: newHour})
             console.log(this.state.gametime)
@@ -174,7 +153,7 @@ class Game extends Component {
 
         return(
           <div id='mainContainer'>
-            <FrontDesk camFeed={this.state.currentCam} />
+            <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
             <Map handleClick={this.handleClick.bind(this)} />
           </div>
         )
