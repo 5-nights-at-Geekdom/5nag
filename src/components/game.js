@@ -7,8 +7,8 @@ class Game extends Component {
         super(props)
 
         this.state = {
-            time: 0,
-            gametime: 0,
+            time: 120,
+            gametime: 12,
             enemyPosition: 6,
             counter: 0,
             level: 1,
@@ -20,7 +20,6 @@ class Game extends Component {
         }
     }
     handleClick(camNum){
-      this.enemyMovement()
       this.setState({currentCam: camNum})
       console.log("=================================================")
       console.log("the enemy is in room " + this.state.enemyPosition)
