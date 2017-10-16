@@ -16,15 +16,29 @@ class Game extends Component {
             level: 1,
             currentCam: 1,
             ping:{
-                charges: 1,
-                cooldown: 13,
+                cooldown: 0,
             },
         }
     }
     handleClick(camNum){
       this.setState({currentCam: camNum})
-      console.log("=================================================")
-      console.log("the enemy is in room " + this.state.enemyPosition)
+    }
+
+    handlePing(){
+        if(this.state.ping.cooldown == 0){
+            this.setState({ping:{cooldown: 11}})    
+        }
+        let newPos = Math.floor(Math.random()*6) + 3;
+        if (this.state.ping.cooldown !== 0) {
+            $("#errorMessage").show()
+        }
+        if (this.state.counter < 3) {
+            var newCount = 0
+        }else {
+            var newCount = this.state.counter - 3
+        }
+        this.setState({ counter: newCount, enemyPosition: newPos })
+
     }
 
     enemyMovement(){
@@ -101,17 +115,15 @@ class Game extends Component {
 
        }
     }
-    enemyPresentInRoom(){
-      if (this.state.enemyPosition === this.state.currentCam){
-          return true;
-      } else {
-          return false;
-      }
-    }
-
     gameTimer(){
         let newTime  = this.state.time - 1
         this.setState({ time: newTime})
+        if (this.state.ping.cooldown !== 0) {
+            let cooldown = this.state.ping.cooldown - 1
+            this.setState({ping:{cooldown: cooldown}})
+        } else {
+            $("#errorMessage").hide()
+        }
         console.log(this.state.enemyPosition)
         if (this.state.time <= 0) {
             console.log("Night survived")
@@ -126,7 +138,7 @@ class Game extends Component {
                 currentCam: 1,
                 ping:{
                     charges: 1,
-                    cooldown: 13,
+                    cooldown: 11,
                 },
             });
 
@@ -134,6 +146,7 @@ class Game extends Component {
         }
         if (this.state.time % 5 === 0) {
             this.enemyMovement()
+            console.log("the cureent count is :" + this.state.counter);
         }
         if (this.state.time % 20 === 0) {
             let newHour = this.state.gametime + 1
@@ -156,7 +169,8 @@ class Game extends Component {
         return(
           <div id='mainContainer'>
             <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
-            <Map handleClick={this.handleClick.bind(this)} />
+            <Map handleClick={this.handleClick.bind(this)} handlePing={this.handlePing.bind(this)} />
+            <ErrorPing cooldown={this.state.ping.cooldown}/>
           </div>
         )
     }
