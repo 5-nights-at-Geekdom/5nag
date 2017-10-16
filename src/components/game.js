@@ -143,6 +143,7 @@ class Game extends Component {
             });
 
 
+
         }
         if (this.state.time % 5 === 0) {
             this.enemyMovement()
@@ -162,15 +163,18 @@ class Game extends Component {
             this.gameTimer()
         }, 1000);
 
+
     }
 
     render () {
 
         return(
           <div id='mainContainer'>
-            <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
+
             <Map handleClick={this.handleClick.bind(this)} handlePing={this.handlePing.bind(this)} />
+            <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
             <ErrorPing cooldown={this.state.ping.cooldown}/>
+
           </div>
         )
     }
