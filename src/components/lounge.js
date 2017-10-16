@@ -4,14 +4,16 @@ class Lounge extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            enemy: false,
-        }
     }
     render(){
-    	return(
-    		<div className="componentView" id="lounge"></div>
-    	)
+        if (this.props.enemyPosition === 4) {
+            return(
+                <div className = "componentView" id="eLounge"></div>
+            )
+        }
+        return(
+            <div className="componentView" id="lounge"></div>
+        )
     }
 }
 

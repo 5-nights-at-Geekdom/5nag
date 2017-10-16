@@ -4,14 +4,16 @@ class Kitchen extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            enemy: false,
-        }
     }
     render(){
-    	return(
-    		<div className="componentView" id="kitchen"></div>
-    	)
+        if (this.props.enemyPosition === 1) {
+            return(
+                <div className = "componentView" id="eKitchen"></div>
+            )
+        }
+        return(
+            <div className="componentView" id="kitchen"></div>
+        )
     }
 }
 
