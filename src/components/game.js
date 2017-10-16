@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import FrontDesk from './front_desk'
 import Map from './map'
+import ErrorPing from './error'
+import $ from 'jquery'
 
 class Game extends Component {
     constructor(props) {
