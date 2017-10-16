@@ -121,10 +121,10 @@ class Game extends Component {
           break;
 
           default:
-         
+
         }
       } else {
-        
+
       console.log("no enemy, all clear!!!")
       }
     }
@@ -132,8 +132,8 @@ class Game extends Component {
     render () {
         return(
           <div id='mainContainer'>
-            <FrontDesk camFeed={this.state.currentCam} />
             <Map handleClick={this.handleClick.bind(this)} />
+            <FrontDesk camFeed={this.state.currentCam} />
           </div>
         )
     }
