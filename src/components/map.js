@@ -17,7 +17,7 @@ class Map extends Component {
     			<button onClick={() => this.props.handleClick(3)}>Cam3</button>
     			<button onClick={() => this.props.handleClick(4)}>Cam4</button>
     			<button onClick={() => this.props.handleClick(5)}>Cam5</button>
-    			<button onClick={() => this.props.handleClick(1)}>Ping</button>
+    			<button onClick={() => this.props.handlePing()}>Ping</button>
     		</div>
     	)
     }

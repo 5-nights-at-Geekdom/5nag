@@ -4,14 +4,16 @@ class Creepy_Hallway extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            enemy: false,
-        }
     }
     render(){
-    	return(
-    		<div className="componentView" id="creepyHallway"></div>
-    	)
+        if (this.props.enemyPosition === 5) {
+            return(
+                <div className = "componentView" id="eCreepyHallyway"></div>
+            )
+        }
+        return(
+            <div className="componentView" id="creepyHallway"></div>
+        )
     }
 }
 

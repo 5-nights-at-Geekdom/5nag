@@ -4,14 +4,16 @@ class Corner extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            enemy: false,
-        }
     }
     render(){
-    	return(
-    		<div className="componentView" id="corner"></div>
-    	)
+        if (this.props.enemyPosition === 3) {
+            return(
+                <div className = "componentView" id="eCorner"></div>
+            )
+        }
+        return(
+            <div className="componentView" id="corner"></div>
+        )
     }
 }
 

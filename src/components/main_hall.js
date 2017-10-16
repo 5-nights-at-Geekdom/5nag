@@ -4,14 +4,16 @@ class Main_Hall extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            enemy: false,
-        }
     }
     render(){
-    	return(
-    		<div className="componentView" id="mainHall"></div>
-    	)
+        if (this.props.enemyPosition === 2) {
+            return(
+                <div className = "componentView" id="eMainHall"></div>
+            )
+        }
+        return(
+            <div className="componentView" id="mainHall"></div>
+        )
     }
 }
 
