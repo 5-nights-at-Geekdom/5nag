@@ -1,43 +1,52 @@
 body
   margin: 0
-  color: red;
+  color: red
 
 #mainContainer
- position: absolute
- max-width: 100%
- max-height: 100%
+  max-width: 100%
+  max-height: 100%
+  position: relative
 
-#gameBackground
- background-image: url("/img/mainbckgrnd.png")
- width: 100vw
- height: 100vh
- position: absolute
+  #map
+    background-image: url("/img/map.svg")
+    background-size: contain
+    background-repeat: no-repeat
+    width: 150px
+    height: 150px
+    position: absolute
+    bottom: 1.5em
+    right: 1em
 
-.componentView
-  width: 400px
-  height: 400px
+  #gameBackground
+    background-image: url("/img/camfeeds/front-desk.jpg")
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    width: 100vw
+    height: 100vh
+
+  .componentView
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    width: 550px
+    height: 380px
+    position: absolute
+    top: 62%
+    left: 54%
+    transform: translate(-50%, -50%)
 
 #kitchen
-	background-image: url("/img/cam1.png")
+	background-image: url("/img/camfeeds/kitchen.jpg")
 
 #mainHall
-	background-image: url("/img/cam2.png")
+	background-image: url("/img/camfeeds/main-hall.jpg")
 
 #corner
-	background-image: url("/img/cam3.png")
+	background-image: url("/img/camfeeds/corner.jpg")
 
 #lounge
-	background-image: url("/img/cam4.png")
+	background-image: url("/img/camfeeds/lounge.jpg")
 
 #creepyHallway
-	background-image: url("/img/cam5.png")
-
-#map
-	background-image: url("/img/map.svg")
-	background-size: contain
-	background-repeat: no-repeat
-	width: 125px 
-	height: 125px
-	position: absolute
-
-	
+	background-image: url("/img/camfeeds/creepy-hall.jpg")
