@@ -121,15 +121,58 @@ class Game extends Component {
           break;
 
           default:
-         
+
         }
       } else {
-        
+
       console.log("no enemy, all clear!!!")
       }
     }
 
+    gameTimer(){
+        let newTime  = this.state.time - 1
+        this.setState({ time: newTime})
+        console.log(this.state.enemyPosition)
+        if (this.state.time <= 0) {
+            console.log("Night survived")
+            clearInterval(this.interval)
+            let newLevel = this.state.level + 1
+            this.setState ({
+                time: 120,
+                gametime: 12,
+                enemyPosition: 6,
+                counter: 0,
+                level: newLevel,
+                currentCam: 1,
+                ping:{
+                    charges: 1,
+                    cooldown: 13,
+                },
+            });
+
+
+        }
+        if (this.state.time % 5 == 0) {
+            this.enemyMovement()
+        }
+        if (this.state.time % 20 == 0) {
+            let newHour = this.state.gametime + 1
+            this.setState({gametime: newHour})
+            console.log(this.state.gametime)
+        }
+
+    }
+
+    componentDidMount(){
+
+        this.interval = setInterval(() => {
+            this.gameTimer()
+        }, 1000);
+
+    }
+
     render () {
+
         return(
           <div id='mainContainer'>
             <FrontDesk camFeed={this.state.currentCam} />
