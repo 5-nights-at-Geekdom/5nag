@@ -10,7 +10,7 @@ body {
     background-image: url("/img/map.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 150px;
+    width: 247px;
     height: 150px;
     position: absolute;
     bottom: 1.5em;
@@ -47,3 +47,15 @@ body {
 
 #creepyHallway {
   background-image: url("/img/camfeeds/creepy-hall.jpg"); }
+
+.btn {
+  position: relative;
+  height: 35px;
+  width: 5em;
+  top: -10em;
+  margin: 5px;
+  border: solid white;
+  color: white;
+  background-color: Transparent;
+  outline: 0;
+  focus: none; }

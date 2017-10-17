@@ -12,12 +12,12 @@ class Map extends Component {
     render(){
     	return(
     		<div id="map">
-    			<button onClick={() => this.props.handleClick(1)}>Cam1</button>
-    			<button onClick={() => this.props.handleClick(2)}>Cam2</button>
-    			<button onClick={() => this.props.handleClick(3)}>Cam3</button>
-    			<button onClick={() => this.props.handleClick(4)}>Cam4</button>
-    			<button onClick={() => this.props.handleClick(5)}>Cam5</button>
-    			<button onClick={() => this.props.handlePing()}>Ping</button>
+    			<button className="btn" onClick={() => this.props.handleClick(1)}>Cam 1</button>
+    			<button className="btn" onClick={() => this.props.handleClick(2)}>Cam 2</button>
+    			<button className="btn" onClick={() => this.props.handleClick(3)}>Cam 3</button>
+    			<button className="btn" onClick={() => this.props.handleClick(4)}>Cam 4</button>
+    			<button className="btn" onClick={() => this.props.handleClick(5)}>Cam 5</button>
+    			<button className="btn" onClick={() => this.props.handlePing()}>Ping</button>
     		</div>
     	)
     }
