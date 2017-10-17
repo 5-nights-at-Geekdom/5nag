@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import FrontDesk from './front_desk'
 import Map from './map'
 import ErrorPing from './error'
+import ContinueModal from './continueModal'
 import $ from 'jquery'
 
 class Game extends Component {
@@ -9,7 +10,7 @@ class Game extends Component {
         super(props)
 
         this.state = {
-            time: 120,
+            time: 15,
             gametime: 12,
             enemyPosition: 6,
             counter: 0,
@@ -26,7 +27,7 @@ class Game extends Component {
 
     handlePing(){
         if(this.state.ping.cooldown == 0){
-            this.setState({ping:{cooldown: 11}})    
+            this.setState({ping:{cooldown: 11}})
         }
         let newPos = Math.floor(Math.random()*6) + 3;
         if (this.state.ping.cooldown !== 0) {
@@ -115,6 +116,26 @@ class Game extends Component {
 
        }
     }
+
+    continueScreen(){
+        let newLevel = this.state.level + 1
+        this.setState ({
+            time: 120,
+            gametime: 12,
+            enemyPosition: 6,
+            counter: 0,
+            level: newLevel,
+            currentCam: 1,
+            ping:{
+                charges: 1,
+                cooldown: 11,
+            },
+        });
+
+        this.componentDidMount();
+
+        $(".continue").hide();
+    }
     gameTimer(){
         let newTime  = this.state.time - 1
         this.setState({ time: newTime})
@@ -128,22 +149,9 @@ class Game extends Component {
         if (this.state.time <= 0) {
             console.log("Night survived")
             clearInterval(this.interval)
-            let newLevel = this.state.level + 1
-            this.setState ({
-                time: 120,
-                gametime: 12,
-                enemyPosition: 6,
-                counter: 0,
-                level: newLevel,
-                currentCam: 1,
-                ping:{
-                    charges: 1,
-                    cooldown: 11,
-                },
-            });
-
-
-
+            $(".continue").show();
+        }else {
+            $(".continue").hide();
         }
         if (this.state.time % 5 === 0) {
             this.enemyMovement()
@@ -174,6 +182,7 @@ class Game extends Component {
             <Map handleClick={this.handleClick.bind(this)} handlePing={this.handlePing.bind(this)} />
             <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
             <ErrorPing cooldown={this.state.ping.cooldown}/>
+            <ContinueModal continueScreen={this.continueScreen.bind(this)} />
 
           </div>
         )
