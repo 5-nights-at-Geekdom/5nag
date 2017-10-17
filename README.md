@@ -1,12 +1,13 @@
 Agenda Items:
-	Add win screen component and logic.
-	build out ping logic.
-	build out level transition logic. 
-	finish enemy movement logic. 
-	build death logic.
-	get geekdom pictures added to project and photoshopped
-	create enemy sprite based off pictures and have it follow enemy logic. 
-	To be Continued....
+	Work on map display
+	Get new frontdesk photo from Geekdom
+	add enemy sprite on top of images
+	create and add win modal
+	create and add death modal
+	find/create audio
+	after effects on images?
+	to be continued...
+
 
 
 To Get Up and Running
