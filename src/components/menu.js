@@ -8,13 +8,7 @@ const menu = () => {
         <h2> Five Nights at Geekdom </h2>
         <ul>
           <li>
-            <Link to={'/game'}>New Game</Link>
-          </li>
-          <li>
-            <Link to={{pathname: '/game', state: 'test'}}>Continue</Link>
-          </li>
-          <li>
-            <Link to={'/options'}>Options</Link>
+            <Link to={'/game'}>Start Game</Link>
           </li>
         </ul>
       </div>
