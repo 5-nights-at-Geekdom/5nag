@@ -139,6 +139,11 @@ class Game extends Component {
     gameTimer(){
         let newTime  = this.state.time - 1
         this.setState({ time: newTime})
+
+        if (this.state.enemyPosition === 0) {
+            clearInterval(this.interval)
+            $(".lose").show();
+        }
         if (this.state.ping.cooldown !== 0) {
             let cooldown = this.state.ping.cooldown - 1
             this.setState({ping:{cooldown: cooldown}})
@@ -150,8 +155,6 @@ class Game extends Component {
             console.log("Night survived")
             clearInterval(this.interval)
             $(".continue").show();
-        }else {
-            $(".continue").hide();
         }
         if (this.state.time % 5 === 0) {
             this.enemyMovement()
@@ -162,6 +165,7 @@ class Game extends Component {
             this.setState({gametime: newHour})
             console.log(this.state.gametime)
         }
+
 
     }
 
