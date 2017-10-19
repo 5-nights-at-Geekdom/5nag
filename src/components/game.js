@@ -10,7 +10,7 @@ class Game extends Component {
         super(props)
 
         this.state = {
-            time: 15,
+            time: 120,
             gametime: 12,
             enemyPosition: 6,
             counter: 0,

@@ -6,7 +6,7 @@ class Lounge extends Component {
 
     }
     render(){
-        if (this.props.enemyPosition === 4) {
+        if (this.props.enemyPosition === 2) {
             return(
                 <div className = "componentView" id="eLounge"></div>
             )

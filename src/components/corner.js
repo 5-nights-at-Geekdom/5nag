@@ -6,7 +6,7 @@ class Corner extends Component {
 
     }
     render(){
-        if (this.props.enemyPosition === 3) {
+        if (this.props.enemyPosition === 4) {
             return(
                 <div className = "componentView" id="eCorner"></div>
             )
