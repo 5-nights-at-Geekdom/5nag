@@ -16,16 +16,16 @@ class Front_Desk extends Component {
     	switch(cam) {
     		case 1:
 
-    		return <Kitchen enemyPosition = {this.props.enemyPosition} />
-    		case 2:
-
     		return <MainHall enemyPosition = {this.props.enemyPosition} />
-    		case 3:
-
-    		return <Corner enemyPosition = {this.props.enemyPosition} />
-    		case 4:
+            case 2:
 
     		return <Lounge enemyPosition = {this.props.enemyPosition} />
+            case 3:
+
+            return <Kitchen enemyPosition = {this.props.enemyPosition} />
+            case 4:
+
+            return <Corner enemyPosition = {this.props.enemyPosition} />
     		case 5:
             
     		return <CreepyHallway enemyPosition = {this.props.enemyPosition} />

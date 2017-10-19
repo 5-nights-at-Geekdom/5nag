@@ -6,7 +6,7 @@ class Kitchen extends Component {
 
     }
     render(){
-        if (this.props.enemyPosition === 1) {
+        if (this.props.enemyPosition === 3) {
             return(
                 <div className = "componentView" id="eKitchen"></div>
             )

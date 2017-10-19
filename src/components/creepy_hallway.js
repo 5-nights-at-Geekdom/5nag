@@ -8,7 +8,7 @@ class Creepy_Hallway extends Component {
     render(){
         if (this.props.enemyPosition === 5) {
             return(
-                <div className = "componentView" id="eCreepyHallyway"></div>
+                <div className = "componentView" id="eCreepyHallway"></div>
             )
         }
         return(

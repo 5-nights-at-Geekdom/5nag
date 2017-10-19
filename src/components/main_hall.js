@@ -6,7 +6,7 @@ class Main_Hall extends Component {
 
     }
     render(){
-        if (this.props.enemyPosition === 2) {
+        if (this.props.enemyPosition === 1) {
             return(
                 <div className = "componentView" id="eMainHall"></div>
             )
