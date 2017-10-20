@@ -27,7 +27,7 @@ class Game extends Component {
 
     handlePing(){
         if(this.state.ping.cooldown == 0){
-            this.setState({ping:{cooldown: 11}})
+            this.setState({ping:{cooldown: 15}})
         }
         let newPos = Math.floor(Math.random()*6) + 3;
         if (this.state.ping.cooldown !== 0) {
