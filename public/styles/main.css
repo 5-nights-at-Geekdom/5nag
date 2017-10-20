@@ -10,11 +10,12 @@ body {
     background-image: url("/img/map.svg");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 247px;
-    height: 150px;
+    width: 200px;
+    height: 100px;
+    opacity: 0.6;
     position: absolute;
-    bottom: 1.5em;
-    right: 1em; }
+    top: 10em;
+    left: 1em; }
   #mainContainer #gameBackground {
     background-image: url("/img/camfeeds/front-desk.jpg");
     background-position: center;
@@ -26,11 +27,11 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 550px;
-    height: 380px;
+    width: 40em;
+    height: 400px;
     position: absolute;
-    top: 62%;
-    left: 54%;
+    top: 27em;
+    left: 52em;
     transform: translate(-50%, -50%); }
 
 #kitchen {
@@ -71,9 +72,16 @@ body {
   margin: 5px;
   border: solid white;
   color: white;
-  background-color: Transparent;
+  background-color: transparent;
+  background-repeat: no-repeat;
   outline: 0;
-  focus: none; }
+  focus: none;
+  transition: 0.2s; }
+  .btn:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: color 0.2s; }
 
 .continue {
   position: fixed;
