@@ -132,19 +132,23 @@ class Game extends Component {
             },
         });
 
-        this.componentDidMount();
+        this.gameStart();
 
         $(".continue").hide();
     }
     gameTimer(){
-
+        // Increment time by 1 sec
         let newTime  = this.state.time - 1
         this.setState({ time: newTime})
+
+        // Toggles Losing Screen
 
         if (this.state.enemyPosition === 0) {
             clearInterval(this.interval)
             $(".lose").show();
         }
+
+        // toggles ping cooldown
         if (this.state.ping.cooldown !== 0) {
             let cooldown = this.state.ping.cooldown - 1
             this.setState({ping:{cooldown: cooldown}})
