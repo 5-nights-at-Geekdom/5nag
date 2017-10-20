@@ -8,7 +8,7 @@ class Clock extends Component {
     render(){
 
         return(
-            <div className="clock">{this.props.clock}:00</div>
+            <div className="clock">{this.props.clock}:00 AM</div>
         )
     }
 }

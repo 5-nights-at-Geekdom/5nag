@@ -39,7 +39,11 @@ body {
     transform: translate(-50%, -50%); }
 
 .clock {
-  font-family: "clockFont"; }
+  font-family: "clockFont";
+  position: absolute;
+  padding: .2em;
+  font-size: 4.5em;
+  top: 4em; }
 
 #kitchen {
   background-image: url("/img/camfeeds/kitchen.jpg"); }
