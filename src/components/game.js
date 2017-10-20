@@ -4,6 +4,7 @@ import Map from './map'
 import ErrorPing from './error'
 import ContinueModal from './continueModal'
 import Death from './death'
+import Clock from './clock'
 import $ from 'jquery'
 
 class Game extends Component {
@@ -28,7 +29,7 @@ class Game extends Component {
 
     handlePing(){
         if(this.state.ping.cooldown == 0){
-            this.setState({ping:{cooldown: 11}})
+            this.setState({ping:{cooldown: 15}})
         }
         let newPos = Math.floor(Math.random()*6) + 3;
         if (this.state.ping.cooldown !== 0) {
@@ -133,19 +134,23 @@ class Game extends Component {
             },
         });
 
-        this.componentDidMount();
+        this.gameStart();
 
         $(".continue").hide();
     }
     gameTimer(){
-
+        // Increment time by 1 sec
         let newTime  = this.state.time - 1
         this.setState({ time: newTime})
+
+        // Toggles Losing Screen
 
         if (this.state.enemyPosition === 0) {
             clearInterval(this.interval)
             $(".lose").show();
         }
+
+        // toggles ping cooldown
         if (this.state.ping.cooldown !== 0) {
             let cooldown = this.state.ping.cooldown - 1
             this.setState({ping:{cooldown: cooldown}})
@@ -153,29 +158,48 @@ class Game extends Component {
             $("#errorMessage").hide()
         }
         console.log(this.state.enemyPosition)
+
+        // toggles level completed modal
         if (this.state.time <= 0) {
             console.log("Night survived")
             clearInterval(this.interval)
             $(".continue").show();
         }
+
+        // moves the enemy
         if (this.state.time % 5 === 0) {
             this.enemyMovement()
             console.log("the cureent count is :" + this.state.counter);
         }
+
+        // changes game hour
         if (this.state.time % 20 === 0) {
-            let newHour = this.state.gametime + 1
+            let newHour = (this.state.gametime + 1) % 12
             this.setState({gametime: newHour})
             console.log(this.state.gametime)
+        }
+
+        // toggles pop up
+
+        if (this.state.time % 10 === 0) {
+            if (this.state.enemyPosition === this.state.camFeed) {
+                $(".popUp").show()
+                this.enemyMovement()
+            }
         }
 
 
     }
 
-    componentDidMount(){
-
+    gameStart(){
         this.interval = setInterval(() => {
             this.gameTimer()
         }, 1000);
+    }
+
+    componentDidMount(){
+
+        this.gameStart();
 
     }
 
@@ -188,6 +212,8 @@ class Game extends Component {
         return(
           <div id='mainContainer'>
 
+
+            <Clock clock={this.state.gametime} />
             <Map handleClick={this.handleClick.bind(this)} handlePing={this.handlePing.bind(this)} />
             <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
             <ErrorPing cooldown={this.state.ping.cooldown}/>
