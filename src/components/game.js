@@ -157,7 +157,8 @@ class Game extends Component {
         } else {
             $("#errorMessage").hide()
         }
-        console.log(this.state.enemyPosition)
+        console.log("this is the current enemy position:" + this.state.enemyPosition)
+        console.log("this is the current camera:" + this.state.currentCam);
 
         // toggles level completed modal
         if (this.state.time <= 0) {
@@ -167,7 +168,7 @@ class Game extends Component {
         }
 
         // moves the enemy
-        if (this.state.time % 5 === 0) {
+        if (this.state.time % 5 === 0 && this.state.enemyPosition !== this.state.currentCam) {
             this.enemyMovement()
             console.log("the cureent count is :" + this.state.counter);
         }
@@ -176,13 +177,14 @@ class Game extends Component {
         if (this.state.time % 20 === 0) {
             let newHour = (this.state.gametime + 1) % 12
             this.setState({gametime: newHour})
-            console.log(this.state.gametime)
         }
 
         // toggles pop up
 
         if (this.state.time % 10 === 0) {
-            if (this.state.enemyPosition === this.state.camFeed) {
+            console.log("TEN SECONDS HAVE PASSED");
+            if (this.state.enemyPosition === this.state.currentCam) {
+                console.log("POP UP HAS POPPED");
                 $(".popUp").show()
                 this.enemyMovement()
             }
