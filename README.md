@@ -17,5 +17,5 @@ To Get Up and Running
   - `npm run build` Creates static files suitable for a production env. (Please test this before making PR)
 
 To Serve the game in a production env
-	- `npm install -g serve` to install a basic server
-	- `serve -s buld` to serve game on http://localhost:5000 AND http://YOUR_LAN_ADDRESS:5000 (people can access on other machines)
+  - `npm install -g serve` to install a basic server
+  - `serve -s buld` to serve game on http://localhost:5000 AND http://YOUR_LAN_ADDRESS:5000 (people can access on other machines)
