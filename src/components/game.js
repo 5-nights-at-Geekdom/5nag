@@ -3,6 +3,7 @@ import FrontDesk from './front_desk'
 import Map from './map'
 import ErrorPing from './error'
 import ContinueModal from './continueModal'
+import Clock from './clock'
 import $ from 'jquery'
 
 class Game extends Component {
@@ -210,6 +211,8 @@ class Game extends Component {
         return(
           <div id='mainContainer'>
 
+
+            <Clock clock={this.state.gametime} />
             <Map handleClick={this.handleClick.bind(this)} handlePing={this.handlePing.bind(this)} />
             <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
             <ErrorPing cooldown={this.state.ping.cooldown}/>
