@@ -156,29 +156,48 @@ class Game extends Component {
             $("#errorMessage").hide()
         }
         console.log(this.state.enemyPosition)
+
+        // toggles level completed modal
         if (this.state.time <= 0) {
             console.log("Night survived")
             clearInterval(this.interval)
             $(".continue").show();
         }
+
+        // moves the enemy
         if (this.state.time % 5 === 0) {
             this.enemyMovement()
             console.log("the cureent count is :" + this.state.counter);
         }
+
+        // changes game hour
         if (this.state.time % 20 === 0) {
-            let newHour = this.state.gametime + 1
+            let newHour = (this.state.gametime + 1) % 12
             this.setState({gametime: newHour})
             console.log(this.state.gametime)
+        }
+
+        // toggles pop up
+
+        if (this.state.time % 10 === 0) {
+            if (this.state.enemyPosition === this.state.camFeed) {
+                $(".popUp").show()
+                this.enemyMovement()
+            }
         }
 
 
     }
 
-    componentDidMount(){
-
+    gameStart(){
         this.interval = setInterval(() => {
             this.gameTimer()
         }, 1000);
+    }
+
+    componentDidMount(){
+
+        this.gameStart();
 
     }
 
