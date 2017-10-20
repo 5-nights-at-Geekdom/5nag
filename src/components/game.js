@@ -137,8 +137,14 @@ class Game extends Component {
         $(".continue").hide();
     }
     gameTimer(){
+
         let newTime  = this.state.time - 1
         this.setState({ time: newTime})
+
+        if (this.state.enemyPosition === 0) {
+            clearInterval(this.interval)
+            $(".lose").show();
+        }
         if (this.state.ping.cooldown !== 0) {
             let cooldown = this.state.ping.cooldown - 1
             this.setState({ping:{cooldown: cooldown}})
@@ -150,8 +156,6 @@ class Game extends Component {
             console.log("Night survived")
             clearInterval(this.interval)
             $(".continue").show();
-        }else {
-            $(".continue").hide();
         }
         if (this.state.time % 5 === 0) {
             this.enemyMovement()
@@ -163,6 +167,7 @@ class Game extends Component {
             console.log(this.state.gametime)
         }
 
+
     }
 
     componentDidMount(){
@@ -171,7 +176,10 @@ class Game extends Component {
             this.gameTimer()
         }, 1000);
 
+    }
 
+    componentWillUnmount(){
+        clearInterval(this.interval);
     }
 
     render () {
