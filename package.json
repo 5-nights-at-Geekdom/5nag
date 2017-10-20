@@ -14,7 +14,7 @@
     "start": "npm-run-all -p watch-sass start-js",
     "start-js": "react-scripts start",
     "build": "npm run build-sass && react-scripts build",
-    "build-sass": "node-sass sass/main.sass public/styles/main.css --output-style compressed",
+    "build-sass": "node-sass sass/main.sass public/styles/main.css",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "watch-sass": "node-sass sass/main.sass public/styles/main.css --watch"
