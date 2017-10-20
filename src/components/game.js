@@ -3,6 +3,7 @@ import FrontDesk from './front_desk'
 import Map from './map'
 import ErrorPing from './error'
 import ContinueModal from './continueModal'
+import Death from './death'
 import Clock from './clock'
 import $ from 'jquery'
 
@@ -217,6 +218,7 @@ class Game extends Component {
             <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
             <ErrorPing cooldown={this.state.ping.cooldown}/>
             <ContinueModal continueScreen={this.continueScreen.bind(this)} />
+            <Death />
 
           </div>
         )
