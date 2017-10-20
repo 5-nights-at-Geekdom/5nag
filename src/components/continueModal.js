@@ -10,10 +10,17 @@ class ContinueModal extends Component {
         return (
 
             <div className="continue">
+                <div>
 
-                <button
-                onClick={()=> this.props.continueScreen()}
-                >Next Level</button>
+                    <h1>YOU SURVIVED THE NIGHT</h1>
+                    <h2>CLICK TO CONTINUE TO NEXT NIGHT</h2>
+
+                    <button
+                    onClick={()=> this.props.continueScreen()}
+                    >Next Level
+                    </button>
+
+                </div>
 
             </div>
 

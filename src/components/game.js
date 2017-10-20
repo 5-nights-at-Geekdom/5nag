@@ -137,6 +137,7 @@ class Game extends Component {
         $(".continue").hide();
     }
     gameTimer(){
+
         let newTime  = this.state.time - 1
         this.setState({ time: newTime})
 
@@ -175,7 +176,10 @@ class Game extends Component {
             this.gameTimer()
         }, 1000);
 
+    }
 
+    componentWillUnmount(){
+        clearInterval(this.interval);
     }
 
     render () {
