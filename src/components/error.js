@@ -8,7 +8,7 @@ class ErrorPing extends Component {
 
     render(){
         return (
-            <div id="errorMessage">ERROR::YOU MUST WAIT {this.props.cooldown} SECONDS </div>
+            <div id="errorMessage">ERROR:YOU MUST WAIT {this.props.cooldown} SECONDS </div>
         )
 
     }
