@@ -28,19 +28,19 @@ class Game extends Component {
     }
 
     handlePing(){
-        if(this.state.ping.cooldown == 0){
+        if(this.state.ping.cooldown === 0){
             this.setState({ping:{cooldown: 15}})
+            let newPos = Math.floor(Math.random()*6) + 3
+            if (this.state.counter < 3) {
+                var newCount = 0
+            }else {
+                var newCount = this.state.counter - 3
+            }
+            this.setState({ counter: newCount, enemyPosition: newPos })
         }
-        let newPos = Math.floor(Math.random()*6) + 3;
-        if (this.state.ping.cooldown !== 0) {
+        else {
             $("#errorMessage").show()
         }
-        if (this.state.counter < 3) {
-            var newCount = 0
-        }else {
-            var newCount = this.state.counter - 3
-        }
-        this.setState({ counter: newCount, enemyPosition: newPos })
 
     }
 
@@ -120,23 +120,27 @@ class Game extends Component {
     }
 
     continueScreen(){
-        let newLevel = this.state.level + 1
-        this.setState ({
-            time: 120,
-            gametime: 12,
-            enemyPosition: 6,
-            counter: 0,
-            level: newLevel,
-            currentCam: 1,
-            ping:{
-                charges: 1,
-                cooldown: 11,
-            },
-        });
+        if (this.state.time === 0) {
+            let newLevel = this.state.level + 1
+            this.setState ({
+                time: 120,
+                gametime: 12,
+                enemyPosition: 6,
+                counter: 0,
+                level: newLevel,
+                currentCam: 1,
+                ping:{
+                    cooldown: 0,
+                },
+            });
 
-        this.gameStart();
+            this.gameStart();
 
-        $(".continue").hide();
+            $(".continue").hide();
+        }
+
+        console.log("DONT BE A CHEATER")
+
     }
     gameTimer(){
         // Increment time by 1 sec
@@ -181,7 +185,7 @@ class Game extends Component {
 
         // toggles pop up
 
-        if (this.state.time % 10 === 0) {
+        if (this.state.time % 15 === 0) {
             console.log("TEN SECONDS HAVE PASSED");
             if (this.state.enemyPosition === this.state.currentCam) {
                 console.log("POP UP HAS POPPED");
