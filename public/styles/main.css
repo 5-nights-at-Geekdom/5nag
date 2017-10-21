@@ -144,6 +144,22 @@
   to {
     background-color: lime; } }
 
+#deathAnimation {
+  background-image: url("/img/death0.jpg");
+  animation: jumpscare 5s; }
+
+@keyframes jumpscare {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(-45deg); }
+  50% {
+    transform: rotate(45deg); }
+  75% {
+    transform: rotate(-45deg); }
+  100% {
+    transform: rotate(45deg); } }
+
 body {
   box-sizing: border-box;
   color: red;
@@ -160,7 +176,6 @@ ul {
   padding: 0; }
 
 .btn {
-  position: relative;
   height: 35px;
   width: 5em;
   top: -10em;
@@ -192,6 +207,3 @@ ul {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
   display: none; }
-
-#deathAnimation {
-  background-image: url("/img/ecreepy-hall.jpg"); }
