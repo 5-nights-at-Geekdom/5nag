@@ -2,6 +2,10 @@ body {
   margin: 0;
   color: red; }
 
+@font-face {
+  font-family: "clockFont";
+  src: url("./fonts/digital-7.ttf"); }
+
 #mainContainer {
   max-width: 100%;
   max-height: 100%;
@@ -15,7 +19,8 @@ body {
     opacity: 0.6;
     position: absolute;
     top: 10em;
-    left: 1em; }
+    left: 1em;
+    transform: skewY(1deg); }
   #mainContainer #gameBackground {
     background-image: url("/img/camfeeds/front-desk.jpg");
     background-position: center;
@@ -33,6 +38,14 @@ body {
     top: 28.5em;
     left: 52.5em;
     transform: translate(-50%, -50%); }
+
+.clock {
+  font-family: "clockFont";
+  position: absolute;
+  padding: .2em;
+  font-size: 4.5em;
+  top: 4em;
+  transform: skewY(-4deg); }
 
 #kitchen {
   background-image: url("/img/camfeeds/kitchen.jpg"); }
@@ -76,7 +89,8 @@ body {
   background-repeat: no-repeat;
   outline: 0;
   focus: none;
-  transition: 0.2s; }
+  transition: 0.2s;
+  transform: skewY(0deg); }
   .btn:hover {
     background-color: white;
     color: black;
