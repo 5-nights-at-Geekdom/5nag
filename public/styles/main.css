@@ -1,10 +1,41 @@
-body {
-  margin: 0;
-  color: red; }
-
 @font-face {
   font-family: "clockFont";
   src: url("./fonts/digital-7.ttf"); }
+
+.clock {
+  font-family: "clockFont";
+  position: absolute;
+  padding: 0.2em;
+  font-size: 4.5em;
+  top: 4em;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: skewY(-4deg); }
+
+.menu__box {
+  background-image: url("../img/landing-page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  width: 100vw; }
+  .menu__box ul {
+    left: 5em;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%); }
+    .menu__box ul li {
+      text-transform: uppercase; }
+      .menu__box ul li a {
+        background-color: black;
+        display: inline-block;
+        padding: 1em 2em;
+        transition: color 0.3s, background-color 0.3s; }
+      .menu__box ul li a:hover {
+        cursor: pointer;
+        background-color: red;
+        color: black;
+        transition: color 0.3s, background-color 0.3s; }
 
 #mainContainer {
   max-width: 100%;
@@ -20,6 +51,8 @@ body {
     position: absolute;
     top: 10em;
     left: 1em;
+    -webkit-transform: skewY(1deg);
+    -moz-transform: skewY(1deg);
     transform: skewY(1deg); }
   #mainContainer #gameBackground {
     background-image: url("/img/camfeeds/front-desk.jpg");
@@ -35,17 +68,11 @@ body {
     width: 40.5em;
     height: 420px;
     position: absolute;
-    top: 28.5em;
+    top: 27.5em;
     left: 52.5em;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
-
-.clock {
-  font-family: "clockFont";
-  position: absolute;
-  padding: .2em;
-  font-size: 4.5em;
-  top: 4em;
-  transform: skewY(-4deg); }
 
 #kitchen {
   background-image: url("/img/camfeeds/kitchen.jpg"); }
@@ -77,6 +104,21 @@ body {
 #eCreepyHallway {
   background-image: url("/img/camfeeds/ecreepy-hall.jpg"); }
 
+body {
+  box-sizing: border-box;
+  color: red;
+  margin: 0; }
+
+a {
+  color: #e10000;
+  font-size: 1.5em;
+  text-decoration: none; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
 .btn {
   position: relative;
   height: 35px;
@@ -90,6 +132,8 @@ body {
   outline: 0;
   focus: none;
   transition: 0.2s;
+  -webkit-transform: skewY(0deg);
+  -moz-transform: skewY(0deg);
   transform: skewY(0deg); }
   .btn:hover {
     background-color: white;
