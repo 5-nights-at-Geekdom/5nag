@@ -37,6 +37,7 @@ class Game extends Component {
                 var newCount = this.state.counter - 3
             }
             this.setState({ counter: newCount, enemyPosition: newPos })
+            console.log(this.state.counter);
         }
         else {
             $("#errorMessage").show()
