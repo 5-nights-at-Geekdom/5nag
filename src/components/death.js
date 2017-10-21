@@ -7,7 +7,7 @@ class Death extends Component {
     }
     render(){
     	return(
-    		<div id="deathAnimation"></div>
+    		<div id="deathAnimation" className="lose"></div>
     	)
     
     }

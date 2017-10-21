@@ -145,20 +145,32 @@
     background-color: lime; } }
 
 #deathAnimation {
-  background-image: url("/img/death0.jpg");
-  animation: jumpscare 5s; }
+  background-image: url(/img/death0.png);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: 1;
+  left: 600px;
+  top: 350px;
+  width: 250px;
+  height: 250px;
+  overflow: auto;
+  display: none;
+  animation: jumpscare .5s;
+  animation-timing-function: linear;
+  animation-direction: alternate; }
 
 @keyframes jumpscare {
   0% {
     transform: rotate(0deg); }
   25% {
-    transform: rotate(-45deg); }
+    transform: rotate(-45deg) scale(2, 2); }
   50% {
-    transform: rotate(45deg); }
+    transform: rotate(45deg) scale(3, 3); }
   75% {
-    transform: rotate(-45deg); }
+    transform: rotate(-45deg) scale(2, 2); }
   100% {
-    transform: rotate(45deg); } }
+    transform: rotate(45deg) scale(4, 4); } }
 
 body {
   box-sizing: border-box;
@@ -176,6 +188,7 @@ ul {
   padding: 0; }
 
 .btn {
+  position: relative;
   height: 35px;
   width: 5em;
   top: -10em;
