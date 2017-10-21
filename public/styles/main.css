@@ -6,6 +6,10 @@ body {
   font-family: "clockFont";
   src: url("./fonts/digital-7.ttf"); }
 
+@font-face {
+  font-family: "errorFont";
+  src: url("./fonts/Syntax_e11.ttf"); }
+
 #mainContainer {
   max-width: 100%;
   max-height: 100%;
@@ -76,6 +80,15 @@ body {
 
 #eCreepyHallway {
   background-image: url("/img/camfeeds/ecreepy-hall.jpg"); }
+
+#errorMessage {
+  background-color: inherit;
+  position: fixed;
+  top: 8.5em;
+  left: 17.5em;
+  font-size: 30px;
+  font-family: "errorFont";
+  color: #990000; }
 
 .btn {
   position: relative;
