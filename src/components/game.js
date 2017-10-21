@@ -38,6 +38,10 @@ class Game extends Component {
             }
             this.setState({ counter: newCount, enemyPosition: newPos })
             console.log(this.state.counter);
+            $("#ping").css("background-color","red")
+            $("#ping").animate({
+                backgroundColor: "#00cc00"
+            },150000)
         }
         else {
             $("#errorMessage").show()
