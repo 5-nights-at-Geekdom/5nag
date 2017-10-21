@@ -27,11 +27,11 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 40em;
-    height: 400px;
+    width: 40.5em;
+    height: 420px;
     position: absolute;
-    top: 27em;
-    left: 52em;
+    top: 28.5em;
+    left: 52.5em;
     transform: translate(-50%, -50%); }
 
 #kitchen {
