@@ -153,7 +153,13 @@ class Game extends Component {
 
         if (this.state.enemyPosition === 0) {
             clearInterval(this.interval)
-            $(".lose").show();
+            $("#gameBackground").addClass("fadeBackground")
+            setTimeout(function(){ 
+              $(".lose").show()
+            }, 3000)
+            setTimeout(function(){ 
+              $("#gameOver").show()
+            }, 1500)
         }
 
         // toggles ping cooldown

@@ -10,7 +10,9 @@
   height: 250px;
   overflow: auto;
   display: none;
-  animation: jumpscare .5s;
+  animation-delay: 4s
+  animation-fill-mode: forwards
+  animation: jumpscare .5s
   animation-timing-function: linear
   animation-direction: alternate;
 
@@ -22,6 +24,24 @@
   50%
     transform: rotate(45deg) scale(3,3)
   75% 
-    transform: rotate(-45deg) scale(2,2)
+    transform: rotate(-45deg) scale(3,3)
   100%
     transform: rotate(45deg) scale(4,4)
+
+.fadeBackground
+animation-fill-mode: forwards
+  animation: fadeback 3s
+
+
+@keyframes fadeback
+  from
+    background-image: url("/img/camfeeds/front-desk.jpg")
+  to  
+    background-image: url("/img/camfeeds/dark-front-desk.jpg")
+
+#gameOver
+  position: absolute
+  background-color: black
+  text-align: center
+  color: red
+  font-size: 20em

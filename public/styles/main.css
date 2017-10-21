@@ -156,6 +156,7 @@
   height: 250px;
   overflow: auto;
   display: none;
+  animation-delay: 4s;
   animation: jumpscare .5s;
   animation-timing-function: linear;
   animation-direction: alternate; }
@@ -171,6 +172,15 @@
     transform: rotate(-45deg) scale(2, 2); }
   100% {
     transform: rotate(45deg) scale(4, 4); } }
+
+.fadeBackground {
+  animation: fadeback 3s; }
+
+@keyframes fadeback {
+  from {
+    background-image: url("/img/camfeeds/front-desk.jpg"); }
+  to {
+    background-image: url("/img/camfeeds/dark-front-desk.jpg"); } }
 
 body {
   box-sizing: border-box;
