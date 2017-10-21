@@ -10,3 +10,31 @@
     font-size: 30px
     font-family: "errorFont"
     color: rgb(153,0,0)
+    display: none
+
+
+#ping
+    background-color: lime
+
+#ping.clicked
+    -webkit-animation: changePing 15s
+    -moz-animation: changePing 15s
+    animation: changePing 15s
+
+@-webkit-keyframes changePing
+    from
+        background-color: red
+    to
+        background-color: lime
+
+@-moz-keyframes changePing
+    from
+        background-color: red
+    to
+        background-color: lime
+
+@keyframes changePing
+    from
+        background-color: red
+    to
+        background-color: lime

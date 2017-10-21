@@ -38,10 +38,7 @@ class Game extends Component {
             }
             this.setState({ counter: newCount, enemyPosition: newPos })
             console.log(this.state.counter);
-            $("#ping").css("background-color","red")
-            $("#ping").animate({
-                backgroundColor: "#00cc00"
-            },150000)
+            $("#ping").addClass('clicked')
         }
         else {
             $("#errorMessage").show()
@@ -164,6 +161,7 @@ class Game extends Component {
             let cooldown = this.state.ping.cooldown - 1
             this.setState({ping:{cooldown: cooldown}})
         } else {
+            $("#ping").removeClass('clicked')
             $("#errorMessage").hide()
         }
         console.log("this is the current enemy position:" + this.state.enemyPosition)
