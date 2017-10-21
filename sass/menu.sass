@@ -1,0 +1,28 @@
+.menu__box
+  background-image: url('../img/landing-page.jpg')
+  background-repeat: no-repeat
+  background-size: cover
+  height: 100vh
+  position: relative
+  width: 100vw
+
+  ul
+    left: 5em
+    position: absolute
+    top: 70%
+    transform: translateY(-50%)
+
+    li
+      text-transform: uppercase
+
+      a
+        background-color: rgb(0, 0, 0)
+        display: inline-block
+        padding: 1em 2em
+        transition: color 0.3s, background-color 0.3s
+
+      a:hover
+        cursor: pointer
+        background-color: rgb(255, 0, 0)
+        color: rgb(0, 0, 0)
+        transition: color 0.3s, background-color 0.3s
