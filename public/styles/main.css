@@ -104,7 +104,11 @@
 #eCreepyHallway {
   background-image: url("/img/camfeeds/ecreepy-hall.jpg"); }
 
-errorMessage {
+@font-face {
+  font-family: "errorFont";
+  src: url("./fonts/Syntax_e11.ttf"); }
+
+#errorMessage {
   background-color: inherit;
   position: fixed;
   top: 8.5em;
@@ -129,6 +133,7 @@ ul {
   padding: 0; }
 
 .btn {
+  position: relative;
   height: 35px;
   width: 5em;
   top: -10em;
