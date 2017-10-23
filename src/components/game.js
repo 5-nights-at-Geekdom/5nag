@@ -21,14 +21,26 @@ class Game extends Component {
             ping:{
                 cooldown: 0,
             },
+            sounds:{
+                catScream: new Audio('/sounds/Cat_Scream.mp3'),
+                creepyBackground: new Audio('/sounds/creepy-background.mp3'),
+                suspense: new Audio('/sounds/Incoming_Suspense.mp3'),
+                loudBang: new Audio('/sounds/Loud_Bang.mp3'),
+                creakingDoor: new Audio('/sounds/creaking_door.mp3'),
+                camSwitch: new Audio('/sounds/camSwitch.mp3'),
+                camPing: new Audio('/sounds/ping.mp3'),
+                alarmClock: new Audio('/sounds/alarmClock.mp3'),
+            }
         }
     }
     handleClick(camNum){
+      this.state.sounds.camSwitch.play()
       this.setState({currentCam: camNum})
     }
 
     handlePing(){
         if(this.state.ping.cooldown === 0){
+            this.state.sounds.camPing.play()
             this.setState({ping:{cooldown: 15}})
             let newPos = Math.floor(Math.random()*6) + 3
             if (this.state.counter < 3) {
@@ -37,7 +49,7 @@ class Game extends Component {
                 var newCount = this.state.counter - 3
             }
             this.setState({ counter: newCount, enemyPosition: newPos })
-            console.log(this.state.counter);
+            console.log(this.state.counter)
             $("#ping").addClass('clicked')
         }
         else {
@@ -50,70 +62,70 @@ class Game extends Component {
        switch (this.state.level) {
           case 1:
               if(this.state.counter < 6){
-                  let newPos = Math.floor(Math.random()*6) + 1;
-                  let newCount = this.state.counter + 1;
-                  this.setState({counter: newCount,enemyPosition: newPos});
+                  let newPos = Math.floor(Math.random()*6) + 1
+                  let newCount = this.state.counter + 1
+                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1;
-                  this.setState({enemyPosition: newPos});
+                  let newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
               }
-          break;
+          break
           case 2:
               if(this.state.counter < 5){
-                  let newPos = Math.floor(Math.random()*6) + 1;
-                  let newCount = this.state.counter + 1;
-                  this.setState({counter: newCount,enemyPosition: newPos});
+                  let newPos = Math.floor(Math.random()*6) + 1
+                  let newCount = this.state.counter + 1
+                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                 let newPos = this.state.enemyPosition - 1;
-                 this.setState({enemyPosition: newPos});
+                 let newPos = this.state.enemyPosition - 1
+                 this.setState({enemyPosition: newPos})
               }
-          break;
+          break
           case 3:
               if(this.state.counter < 4){
-                  let newPos = Math.floor(Math.random()*6) + 1;
-                  let newCount = this.state.counter + 1;
-                  this.setState({counter: newCount,enemyPosition: newPos});
+                  let newPos = Math.floor(Math.random()*6) + 1
+                  let newCount = this.state.counter + 1
+                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1;
-                  this.setState({enemyPosition: newPos});
+                  let newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
               }
-          break;
+          break
           case 4:
               if(this.state.counter < 2){
-                  let newPos = Math.floor(Math.random()*6) + 1;
-                  let newCount = this.state.counter + 1;
-                  this.setState({counter: newCount,enemyPosition: newPos});
+                  let newPos = Math.floor(Math.random()*6) + 1
+                  let newCount = this.state.counter + 1
+                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1;
-                  this.setState({enemyPosition: newPos});
+                  let newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
               }
-          break;
+          break
           case 5:
               if(this.state.counter < 1){
-                  let newPos = Math.floor(Math.random()*6) + 1;
-                  let newCount = this.state.counter + 1;
-                  this.setState({counter: newCount,enemyPosition: newPos});
+                  let newPos = Math.floor(Math.random()*6) + 1
+                  let newCount = this.state.counter + 1
+                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1;
-                  this.setState({enemyPosition: newPos});
+                  let newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
               }
-          break;
+          break
           case 6:
               if(this.state.counter < 1){
-                  let newPos = Math.floor(Math.random()*6) + 1;
-                  let newCount = this.state.counter + 1;
-                  this.setState({counter: newCount,enemyPosition: newPos});
+                  let newPos = Math.floor(Math.random()*6) + 1
+                  let newCount = this.state.counter + 1
+                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1;
-                  this.setState({enemyPosition: newPos});
+                  let newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
               }
-          break;
+          break
 
 
            default:
@@ -134,11 +146,11 @@ class Game extends Component {
                 ping:{
                     cooldown: 0,
                 },
-            });
+            })
 
-            this.gameStart();
+            this.gameStart()
 
-            $(".continue").hide();
+            $(".continue").hide()
         }
 
         console.log("DONT BE A CHEATER")
@@ -152,12 +164,13 @@ class Game extends Component {
         // Toggles Losing Screen
 
         if (this.state.enemyPosition === 0) {
+            this.state.sounds.creepyBackground.pause()
             clearInterval(this.interval)
             $("#gameBackground").addClass("fadeBackground")
-            setTimeout(function(){ 
+            setTimeout(function(){
               $(".lose").show()
             }, 3000)
-            setTimeout(function(){ 
+            setTimeout(function(){
               $("#gameOver").show()
             }, 1500)
         }
@@ -171,33 +184,52 @@ class Game extends Component {
             $("#errorMessage").hide()
         }
         console.log("this is the current enemy position:" + this.state.enemyPosition)
-        console.log("this is the current camera:" + this.state.currentCam);
+        console.log("this is the current camera:" + this.state.currentCam)
 
         // toggles level completed modal
         if (this.state.time <= 0) {
             console.log("Night survived")
             clearInterval(this.interval)
-            $(".continue").show();
+            $(".continue").show()
         }
 
         // moves the enemy
         if (this.state.time % 5 === 0 && this.state.enemyPosition !== this.state.currentCam) {
             this.enemyMovement()
-            console.log("the cureent count is :" + this.state.counter);
+            console.log("the cureent count is :" + this.state.counter)
         }
 
         // changes game hour
         if (this.state.time % 20 === 0) {
             let newHour = (this.state.gametime + 1) % 12
             this.setState({gametime: newHour})
+            let randomSound = Math.floor(Math.random()*4) + 1
+            console.log("RANDOM NUMBER")
+            console.log("+++++++++++++++");
+            console.log("RANDOM NUMBER:" + randomSound)
+            switch (randomSound) {
+                case 1:
+                    this.state.sounds.catScream.play()
+                    break
+                case 2:
+                    this.state.sounds.loudBang.play()
+                    break
+                case 3:
+                    this.state.sounds.creakingDoor.play()
+                    break
+                case 4:
+                    this.state.sounds.alarmClock.play()
+                    break
+                default:
+
+            }
         }
 
         // toggles pop up
 
         if (this.state.time % 15 === 0) {
-            console.log("TEN SECONDS HAVE PASSED");
             if (this.state.enemyPosition === this.state.currentCam) {
-                console.log("POP UP HAS POPPED");
+                console.log("POP UP HAS POPPED")
                 $(".popUp").show()
                 this.enemyMovement()
             }
@@ -209,17 +241,18 @@ class Game extends Component {
     gameStart(){
         this.interval = setInterval(() => {
             this.gameTimer()
-        }, 1000);
+        }, 1000)
+        this.state.sounds.creepyBackground.play()
     }
 
     componentDidMount(){
 
-        this.gameStart();
+        this.gameStart()
 
     }
 
     componentWillUnmount(){
-        clearInterval(this.interval);
+        clearInterval(this.interval)
     }
 
     render () {
@@ -234,7 +267,6 @@ class Game extends Component {
             <ErrorPing cooldown={this.state.ping.cooldown}/>
             <ContinueModal continueScreen={this.continueScreen.bind(this)} />
             <Death />
-
           </div>
         )
     }
