@@ -153,7 +153,7 @@ class Game extends Component {
 
         if (this.state.enemyPosition === 0) {
             clearInterval(this.interval)
-            $("#gameBackground").addClass("fadeBackground")
+            $("#gameBackground").animate({opacity: '0.2'}, 3000)
             setTimeout(function(){ 
               $(".lose").show()
             }, 3000)

@@ -179,9 +179,9 @@
 
 @keyframes fadeback {
   from {
-    background-image: url("/img/camfeeds/front-desk.jpg"); }
+    opacity: 1; }
   to {
-    background-image: url("/img/camfeeds/dark-front-desk.jpg"); } }
+    opacity: .2; } }
 
 #gameOver {
   position: absolute;
