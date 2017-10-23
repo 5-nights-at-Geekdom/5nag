@@ -60,71 +60,114 @@ class Game extends Component {
     }
 
     enemyMovement(){
+      var newPos = Math.floor(Math.random()*6) + 1
        switch (this.state.level) {
           case 1:
               if(this.state.counter < 6){
-                  let newPos = Math.floor(Math.random()*6) + 1
-                  let newCount = this.state.counter + 1
-                  this.setState({counter: newCount,enemyPosition: newPos})
+                 while(newPos === this.state.currentCam){
+                    newPos = Math.floor(Math.random()*6) + 1
+                 }
+                 let newCount = this.state.counter + 1
+                 this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1
+                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
+                   newPos = this.state.enemyPosition - 2
                   this.setState({enemyPosition: newPos})
+                } else {
+                   newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
+                }
               }
           break
           case 2:
               if(this.state.counter < 5){
-                  let newPos = Math.floor(Math.random()*6) + 1
-                  let newCount = this.state.counter + 1
-                  this.setState({counter: newCount,enemyPosition: newPos})
+                  while(newPos === this.state.currentCam){
+                    newPos = Math.floor(Math.random()*6) + 1
+                 }
+                 let newCount = this.state.counter + 1
+                 this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                 let newPos = this.state.enemyPosition - 1
-                 this.setState({enemyPosition: newPos})
+                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
+                   newPos = this.state.enemyPosition - 2
+                  this.setState({enemyPosition: newPos})
+                } else {
+                   newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
+                }
               }
           break
           case 3:
               if(this.state.counter < 4){
-                  let newPos = Math.floor(Math.random()*6) + 1
-                  let newCount = this.state.counter + 1
-                  this.setState({counter: newCount,enemyPosition: newPos})
+                  while(newPos === this.state.currentCam){
+                    newPos = Math.floor(Math.random()*6) + 1
+                 }
+                 let newCount = this.state.counter + 1
+                 this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1
+                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
+                   newPos = this.state.enemyPosition - 2
                   this.setState({enemyPosition: newPos})
+                } else {
+                   newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
+                }
               }
           break
           case 4:
               if(this.state.counter < 2){
-                  let newPos = Math.floor(Math.random()*6) + 1
-                  let newCount = this.state.counter + 1
-                  this.setState({counter: newCount,enemyPosition: newPos})
+                  while(newPos === this.state.currentCam){
+                    newPos = Math.floor(Math.random()*6) + 1
+                 }
+                 let newCount = this.state.counter + 1
+                 this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1
+                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
+                   newPos = this.state.enemyPosition - 2
                   this.setState({enemyPosition: newPos})
+                } else {
+                   newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
+                }
               }
           break
           case 5:
               if(this.state.counter < 1){
-                  let newPos = Math.floor(Math.random()*6) + 1
-                  let newCount = this.state.counter + 1
-                  this.setState({counter: newCount,enemyPosition: newPos})
+                  while(newPos === this.state.currentCam){
+                    newPos = Math.floor(Math.random()*6) + 1
+                 }
+                 let newCount = this.state.counter + 1
+                 this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1
+                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
+                   newPos = this.state.enemyPosition - 2
                   this.setState({enemyPosition: newPos})
+                } else {
+                   newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
+                }
               }
           break
           case 6:
               if(this.state.counter < 1){
-                  let newPos = Math.floor(Math.random()*6) + 1
-                  let newCount = this.state.counter + 1
-                  this.setState({counter: newCount,enemyPosition: newPos})
+                  while(newPos === this.state.currentCam){
+                    newPos = Math.floor(Math.random()*6) + 1
+                 }
+                 let newCount = this.state.counter + 1
+                 this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                  let newPos = this.state.enemyPosition - 1
+                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
+                   newPos = this.state.enemyPosition - 2
                   this.setState({enemyPosition: newPos})
+                } else {
+                   newPos = this.state.enemyPosition - 1
+                  this.setState({enemyPosition: newPos})
+                }
               }
           break
 
