@@ -170,13 +170,13 @@ class Game extends Component {
 
             $("#gameBackground").animate({opacity: '0.2'}, 3000)
             $("#map").animate({opacity: '0.2'}, 3000)
-            setTimeout(function(){ 
+            setTimeout(function(){
               $("#gameOverWrapper").show()
             }, 3000)
-              setTimeout(function(){ 
+              setTimeout(function(){
               $(".lose").show()
             }, 3500)
-            setTimeout(function(){ 
+            setTimeout(function(){
               $("#gameOver").show()
             }, 6000)
         }
@@ -233,7 +233,7 @@ class Game extends Component {
 
         // toggles pop up
 
-        if (this.state.time % 15 === 0) {
+        if (this.state.time % 7 === 0) {
             if (this.state.enemyPosition === this.state.currentCam) {
                 console.log("POP UP HAS POPPED");
                 $("#popUp").show()
@@ -245,10 +245,16 @@ class Game extends Component {
     }
 
     gameStart(){
+        console.log(this.state.sounds.creepyBackground);
         this.interval = setInterval(() => {
             this.gameTimer()
         }, 1000)
         this.state.sounds.creepyBackground.play()
+    }
+
+    gameEnd(){
+        clearInterval(this.interval)
+        this.state.sounds.creepyBackground.pause()
     }
 
     componentDidMount(){
@@ -258,7 +264,7 @@ class Game extends Component {
     }
 
     componentWillUnmount(){
-        clearInterval(this.interval)
+        this.gameEnd()
     }
 
     render () {
