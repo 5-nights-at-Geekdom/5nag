@@ -206,6 +206,24 @@
   color: black;
   transition: color 0.3s, background-color 0.3s; }
 
+#popUp {
+  background-image: url("/img/camfeeds/joinGeekdom.jpg");
+  display: none;
+  z-index: 17; }
+
+.popUpView {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 40.5em;
+  height: 26.5em;
+  position: absolute;
+  top: 27.5em;
+  left: 52.5em;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
 body {
   background-color: black;
   box-sizing: border-box;

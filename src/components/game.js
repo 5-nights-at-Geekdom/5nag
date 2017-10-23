@@ -5,6 +5,7 @@ import ErrorPing from './error'
 import ContinueModal from './continueModal'
 import Death from './death'
 import Clock from './clock'
+import PopUp from './popup'
 import $ from 'jquery'
 
 class Game extends Component {
@@ -202,7 +203,7 @@ class Game extends Component {
             console.log("TEN SECONDS HAVE PASSED");
             if (this.state.enemyPosition === this.state.currentCam) {
                 console.log("POP UP HAS POPPED");
-                $(".popUp").show()
+                $("#popUp").show()
                 this.enemyMovement()
             }
         }
@@ -230,14 +231,13 @@ class Game extends Component {
 
         return(
           <div id='mainContainer'>
-
-
             <Clock clock={this.state.gametime} />
             <Map handleClick={this.handleClick.bind(this)} handlePing={this.handlePing.bind(this)} />
             <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
             <ErrorPing cooldown={this.state.ping.cooldown}/>
             <ContinueModal continueScreen={this.continueScreen.bind(this)} />
             <Death />
+            <PopUp />
 
           </div>
         )
