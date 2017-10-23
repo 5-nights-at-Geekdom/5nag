@@ -10,11 +10,8 @@
   height: 250px;
   overflow: auto;
   display: none;
-  animation-delay: 4s
-  animation-fill-mode: forwards
-  animation: jumpscare .5s
-  animation-timing-function: linear
-  animation-direction: alternate;
+  animation: jumpscare .5s linear alternate forwards
+
 
 @keyframes jumpscare
   0%
@@ -27,16 +24,6 @@
     transform: rotate(-45deg) scale(3,3)
   100%
     transform: rotate(45deg) scale(4,4)
-
-.fadeBackground
-  animation: fadeback 3s
-
-
-@keyframes fadeback
-  from
-    opacity: 1;
-  to  
-    opacity: .2;
 
 #gameOver
   position: absolute
