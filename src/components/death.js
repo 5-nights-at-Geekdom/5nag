@@ -7,7 +7,9 @@ class Death extends Component {
     }
     render(){
     	return(
-    		<div id="deathAnimation" className="lose">
+    		<div id="gameOverWrapper">
+    			<div id="gameOver"></div>
+    			<div id="deathAnimation" className="lose"></div>
     		</div>
     	)
     
