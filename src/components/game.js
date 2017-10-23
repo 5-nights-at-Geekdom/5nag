@@ -5,6 +5,7 @@ import ErrorPing from './error'
 import ContinueModal from './continueModal'
 import Death from './death'
 import Clock from './clock'
+import PopUp from './popup'
 import $ from 'jquery'
 
 class Game extends Component {
@@ -166,13 +167,18 @@ class Game extends Component {
         if (this.state.enemyPosition === 0) {
             this.state.sounds.creepyBackground.pause()
             clearInterval(this.interval)
-            $("#gameBackground").addClass("fadeBackground")
-            setTimeout(function(){
-              $(".lose").show()
+
+            $("#gameBackground").animate({opacity: '0.2'}, 3000)
+            $("#map").animate({opacity: '0.2'}, 3000)
+            setTimeout(function(){ 
+              $("#gameOverWrapper").show()
             }, 3000)
-            setTimeout(function(){
+              setTimeout(function(){ 
+              $(".lose").show()
+            }, 3500)
+            setTimeout(function(){ 
               $("#gameOver").show()
-            }, 1500)
+            }, 6000)
         }
 
         // toggles ping cooldown
@@ -229,8 +235,8 @@ class Game extends Component {
 
         if (this.state.time % 15 === 0) {
             if (this.state.enemyPosition === this.state.currentCam) {
-                console.log("POP UP HAS POPPED")
-                $(".popUp").show()
+                console.log("POP UP HAS POPPED");
+                $("#popUp").show()
                 this.enemyMovement()
             }
         }
@@ -259,14 +265,15 @@ class Game extends Component {
 
         return(
           <div id='mainContainer'>
-
-
             <Clock clock={this.state.gametime} />
             <Map handleClick={this.handleClick.bind(this)} handlePing={this.handlePing.bind(this)} />
             <FrontDesk camFeed={this.state.currentCam} enemyPosition={this.state.enemyPosition} />
             <ErrorPing cooldown={this.state.ping.cooldown}/>
             <ContinueModal continueScreen={this.continueScreen.bind(this)} />
             <Death />
+            <PopUp />
+
+
           </div>
         )
     }

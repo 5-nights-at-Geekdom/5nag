@@ -10,11 +10,8 @@
   height: 250px;
   overflow: auto;
   display: none;
-  animation-delay: 4s
-  animation-fill-mode: forwards
-  animation: jumpscare .5s
-  animation-timing-function: linear
-  animation-direction: alternate;
+  animation: jumpscare .5s linear alternate forwards
+
 
 @keyframes jumpscare
   0%
@@ -28,19 +25,38 @@
   100%
     transform: rotate(45deg) scale(4,4)
 
-.fadeBackground
-  animation: fadeback 3s
-
-
-@keyframes fadeback
-  from
-    background-image: url("/img/camfeeds/front-desk.jpg")
-  to  
-    background-image: url("/img/camfeeds/dark-front-desk.jpg")
-
 #gameOver
   position: absolute
   background-color: black
   text-align: center
   color: red
-  font-size: 20em
+  font-size: 10em
+  width: 100%;
+  height: 100%;
+  display: none
+  z-index: 2;
+
+#gameOverWrapper
+  position: absolute
+  width: 100%;
+  height: 100%;
+  top: 0
+  left: 0
+  display: none;
+  background-color: transparent
+
+#menuWrapper
+  display: inline-block
+  padding: 1em 2em
+
+#menu
+  background-color: rgb(0, 0, 0)
+  display: inline-block
+  padding: 1em 2em
+  transition: color 0.3s, background-color 0.3s
+
+#menu:hover
+  cursor: pointer
+  background-color: rgb(255, 0, 0)
+  color: rgb(0, 0, 0)
+  transition: color 0.3s, background-color 0.3s

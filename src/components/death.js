@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 
 class Death extends Component {
     constructor(props) {
@@ -7,7 +8,11 @@ class Death extends Component {
     }
     render(){
     	return(
-    		<div id="deathAnimation" className="lose">
+    		<div id="gameOverWrapper">
+    			<div id="gameOver">GAME OVER
+    				<div id="toMenuWrapper"><Link className="menu" to={'/'}>Menu</Link></div>
+    			</div>
+    			<div id="deathAnimation" className="lose"></div>
     		</div>
     	)
     
