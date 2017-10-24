@@ -6,6 +6,7 @@ import ContinueModal from './continueModal'
 import Death from './death'
 import Clock from './clock'
 import PopUp from './popup'
+import WinScreen from './winScreen'
 import $ from 'jquery'
 
 class Game extends Component {
@@ -31,6 +32,7 @@ class Game extends Component {
                 camSwitch: new Audio('/sounds/camSwitch.mp3'),
                 camPing: new Audio('/sounds/ping.mp3'),
                 alarmClock: new Audio('/sounds/alarmClock.mp3'),
+                dixieHorn: new Audio('/sounds/alarmClock.mp3'),
             }
         }
     }
@@ -179,22 +181,29 @@ class Game extends Component {
 
     continueScreen(){
         if (this.state.time === 0) {
-            let newLevel = this.state.level + 1
-            this.setState ({
-                time: 120,
-                gametime: 12,
-                enemyPosition: 6,
-                counter: 0,
-                level: newLevel,
-                currentCam: 1,
-                ping:{
-                    cooldown: 0,
-                },
-            })
+            if (this.state.level === 5) {
+                this.state.sounds.creepyBackground.pause()
+                this.state.sounds.dixieHorn.play()
+                $('.win').show()
+            }else {
+                let newLevel = this.state.level + 1
+                this.setState ({
+                    time: 120,
+                    gametime: 12,
+                    enemyPosition: 6,
+                    counter: 0,
+                    level: newLevel,
+                    currentCam: 1,
+                    ping:{
+                        cooldown: 0,
+                    },
+                })
 
-            this.gameStart()
+                this.gameStart()
 
-            $(".continue").hide()
+                $(".continue").hide()
+            }
+
         }
 
         console.log("DONT BE A CHEATER")
@@ -237,6 +246,12 @@ class Game extends Component {
 
         // toggles level completed modal
         if (this.state.time <= 0) {
+            if (this.state.level === 5) {
+
+                clearInterval(this.interval)
+                $(".win").show()
+
+            }
             console.log("Night survived")
             clearInterval(this.interval)
             $(".continue").show()
@@ -321,6 +336,7 @@ class Game extends Component {
             <ContinueModal continueScreen={this.continueScreen.bind(this)} />
             <Death />
             <PopUp />
+            <WinScreen />
 
 
           </div>
