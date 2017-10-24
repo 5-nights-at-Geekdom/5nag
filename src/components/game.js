@@ -221,7 +221,7 @@ class Game extends Component {
             }, 3500)
             setTimeout(function(){
               $("#gameOver").show()
-            }, 6000)
+            }, 6500)
         }
 
         // toggles ping cooldown
