@@ -33,6 +33,7 @@ class Game extends Component {
                 camPing: new Audio('/sounds/ping.mp3'),
                 alarmClock: new Audio('/sounds/alarmClock.mp3'),
                 dixieHorn: new Audio('/sounds/alarmClock.mp3'),
+                monster: new Audio('/sounds/monster.mp3'),
             }
         }
     }
@@ -53,7 +54,7 @@ class Game extends Component {
                 var newCount = this.state.counter - 3
             }
             this.setState({ counter: newCount, enemyPosition: newPos })
-            
+
             $("#ping").addClass('clicked')
         }
         else {
@@ -216,7 +217,7 @@ class Game extends Component {
 
         }
 
-        
+
 
     }
 
@@ -256,8 +257,8 @@ class Game extends Component {
             $("#ping").removeClass('clicked')
             $("#errorMessage").hide()
         }
-        
-        
+
+
 
         // toggles level completed modal
         if (this.state.time <= 0) {
@@ -267,7 +268,7 @@ class Game extends Component {
                 $(".win").show()
 
             }
-            
+
             clearInterval(this.interval)
             $(".continue").show()
         }
@@ -275,7 +276,7 @@ class Game extends Component {
         // moves the enemy
         if (this.state.time % 5 === 0 && this.state.enemyPosition !== this.state.currentCam) {
             this.enemyMovement()
-            
+
         }
 
         // changes game hour
@@ -283,9 +284,9 @@ class Game extends Component {
             let newHour = (this.state.gametime + 1) % 12
             this.setState({gametime: newHour})
             let randomSound = Math.floor(Math.random()*4) + 1
-            
-            
-            
+
+
+
             switch (randomSound) {
                 case 1:
                     this.state.sounds.catScream.play()
@@ -308,7 +309,7 @@ class Game extends Component {
 
         if (this.state.time % 7 === 0) {
             if (this.state.enemyPosition === this.state.currentCam) {
-                
+
                 $("#popUp").show()
                 this.enemyMovement()
             }
