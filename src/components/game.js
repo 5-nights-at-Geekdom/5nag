@@ -36,6 +36,7 @@ class Game extends Component {
             }
         }
     }
+    /*************** CLICKS **************/
     handleClick(camNum){
       this.state.sounds.camSwitch.play()
       this.setState({currentCam: camNum})
@@ -60,6 +61,11 @@ class Game extends Component {
         }
 
     }
+
+
+/****************************************************/
+
+    /************* ENEMY MOVEMENT ***************/
 
     enemyMovement(){
       var newPos = Math.floor(Math.random()*6) + 1
@@ -179,6 +185,10 @@ class Game extends Component {
        }
     }
 
+
+/***********************************************************/
+
+/********************* CONTINUE FUNCTION *******************/
     continueScreen(){
         if (this.state.time === 0) {
             if (this.state.level === 5) {
@@ -209,6 +219,11 @@ class Game extends Component {
         console.log("DONT BE A CHEATER")
 
     }
+
+/**************************************************************/
+
+
+    /************* CONTROLS ALL GAME FUNCTIONS THAT REACT TO TIME ****************/
     gameTimer(){
         // Increment time by 1 sec
         let newTime  = this.state.time - 1
@@ -302,6 +317,9 @@ class Game extends Component {
 
     }
 
+/******************************************************************/
+
+/******************* START AND END GAME FUNCTIONS *****************/
     gameStart(){
         console.log(this.state.sounds.creepyBackground);
         this.interval = setInterval(() => {
@@ -324,7 +342,7 @@ class Game extends Component {
     componentWillUnmount(){
         this.gameEnd()
     }
-
+/**************************************************************/
     render () {
 
         return(
