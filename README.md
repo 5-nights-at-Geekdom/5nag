@@ -1,12 +1,12 @@
 Agenda Items:
-	Work on map display
-	Get new frontdesk photo from Geekdom
-	add enemy sprite on top of images
-	add more enemy sprite photos
 	create and add win modal
-	create and add death modal
-	find/create audio
-	after effects on images?
+	more sounds
+	?possible bonus level?
+	style death screen
+	style level win screen
+	update enemy pictures
+	link geekdom on popup modal
+	and DEPLOY TO PRODUCTION
 	to be continued..
 
 
