@@ -53,7 +53,7 @@ class Game extends Component {
                 var newCount = this.state.counter - 3
             }
             this.setState({ counter: newCount, enemyPosition: newPos })
-            console.log(this.state.counter)
+            
             $("#ping").addClass('clicked')
         }
         else {
@@ -216,7 +216,7 @@ class Game extends Component {
 
         }
 
-        console.log("DONT BE A CHEATER")
+        
 
     }
 
@@ -256,8 +256,8 @@ class Game extends Component {
             $("#ping").removeClass('clicked')
             $("#errorMessage").hide()
         }
-        console.log("this is the current enemy position:" + this.state.enemyPosition)
-        console.log("this is the current camera:" + this.state.currentCam)
+        
+        
 
         // toggles level completed modal
         if (this.state.time <= 0) {
@@ -267,7 +267,7 @@ class Game extends Component {
                 $(".win").show()
 
             }
-            console.log("Night survived")
+            
             clearInterval(this.interval)
             $(".continue").show()
         }
@@ -275,7 +275,7 @@ class Game extends Component {
         // moves the enemy
         if (this.state.time % 5 === 0 && this.state.enemyPosition !== this.state.currentCam) {
             this.enemyMovement()
-            console.log("the cureent count is :" + this.state.counter)
+            
         }
 
         // changes game hour
@@ -283,9 +283,9 @@ class Game extends Component {
             let newHour = (this.state.gametime + 1) % 12
             this.setState({gametime: newHour})
             let randomSound = Math.floor(Math.random()*4) + 1
-            console.log("RANDOM NUMBER")
-            console.log("+++++++++++++++");
-            console.log("RANDOM NUMBER:" + randomSound)
+            
+            
+            
             switch (randomSound) {
                 case 1:
                     this.state.sounds.catScream.play()
@@ -308,7 +308,7 @@ class Game extends Component {
 
         if (this.state.time % 7 === 0) {
             if (this.state.enemyPosition === this.state.currentCam) {
-                console.log("POP UP HAS POPPED");
+                
                 $("#popUp").show()
                 this.enemyMovement()
             }
@@ -321,7 +321,7 @@ class Game extends Component {
 
 /******************* START AND END GAME FUNCTIONS *****************/
     gameStart(){
-        console.log(this.state.sounds.creepyBackground);
+
         this.interval = setInterval(() => {
             this.gameTimer()
         }, 1000)
