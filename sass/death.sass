@@ -4,14 +4,14 @@
 
 #deathAnimation
   background-image: url(/img/death0.png);
-  background-size: 200px;
+  background-size: 85%;
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1;
-  left: 600px;
-  top: 350px;
-  width: 250px;
-  height: 250px;
+  left: -700px
+  top: 100px;
+  width: 1000px;
+  height: 100%;
   overflow: auto;
   display: none;
   animation: jumpscare .5s linear alternate forwards
@@ -19,15 +19,12 @@
 
 @keyframes jumpscare
   0%
-    transform: rotate(0deg)
-  25% 
-    transform: rotate(-45deg) scale(2,2)
-  50%
-    transform: rotate(45deg) scale(3,3)
-  75% 
-    transform: rotate(-45deg) scale(3,3)
+    left: -700px
+  50% 
+    left: 200px
   100%
-    transform: rotate(45deg) scale(4,4)
+   left: 350px
+
 
 #gameOver
   font-family: "creepyFont"

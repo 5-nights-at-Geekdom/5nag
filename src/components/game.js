@@ -220,7 +220,7 @@ class Game extends Component {
               $(".lose").show()
             }, 3500)
             setTimeout(function(){
-              $("#gameOver").show()
+              // $("#gameOver").show()
             }, 6500)
         }
 
