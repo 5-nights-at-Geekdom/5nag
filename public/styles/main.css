@@ -155,7 +155,7 @@
   position: absolute;
   z-index: 1;
   left: -700px;
-  top: 100px;
+  top: 166px;
   width: 1000px;
   height: 100%;
   overflow: auto;
@@ -166,9 +166,11 @@
   0% {
     left: -700px; }
   50% {
-    left: 200px; }
+    left: 25px;
+    transform: scale(2, 1.5) rotate(5deg); }
   100% {
-    left: 350px; } }
+    left: 35px;
+    transform: scale(2, 1.5); } }
 
 #gameOver {
   font-family: "creepyFont";
