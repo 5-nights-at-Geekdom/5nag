@@ -17,9 +17,10 @@
     "build-sass": "node-sass sass/main.sass public/styles/main.css",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "watch-sass": "node-sass sass/main.sass public/styles/main.css --watch"
+    "watch-sass": "node-sass sass/main.sass public/styles/main.css --watch",
   },
   "devDependencies": {
     "node-sass": "^4.5.3"
-  }
+  },
+  "homepage": "https://5nightsatgeekdom.surge.sh"
 }
