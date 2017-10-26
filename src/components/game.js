@@ -218,9 +218,10 @@ class Game extends Component {
             }, 3000)
               setTimeout(function(){
               $(".lose").show()
+              this.state.sounds.monster.play()
             }, 3500)
             setTimeout(function(){
-              // $("#gameOver").show()
+              $("#gameOver").show()
             }, 6500)
         }
 
