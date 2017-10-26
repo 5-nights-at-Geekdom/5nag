@@ -240,6 +240,46 @@
   font-size: 20.5px;
   opacity: 0; }
 
+@font-face {
+  font-family: "creepyText";
+  src: url("./fonts/astron_boy_wonder.ttf"); }
+
+.win {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: black;
+  display: inline-block;
+  display: none; }
+
+#winMessage {
+  position: absolute;
+  top: 9rem;
+  left: 1.5rem;
+  font-family: "creepyText";
+  font-size: 7.5em; }
+
+#strAgain {
+  background-color: black;
+  color: red;
+  display: inline-block;
+  padding: 1em 2em;
+  transition: color 0.3s, background-color 0.3s;
+  position: absolute;
+  top: 19em;
+  left: 17em; }
+
+#strAgain:hover {
+  cursor: pointer;
+  background-color: red;
+  color: black;
+  transition: color 0.3s, background-color 0.3s; }
+
 body {
   background-color: black;
   box-sizing: border-box;
