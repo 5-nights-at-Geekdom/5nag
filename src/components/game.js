@@ -235,15 +235,14 @@ class Game extends Component {
         if (this.state.enemyPosition === 0) {
             this.state.sounds.creepyBackground.pause()
             clearInterval(this.interval)
-
             $("#gameBackground").animate({opacity: '0.2'}, 3000)
             $("#map").animate({opacity: '0.2'}, 3000)
             setTimeout(function(){
+            this.state.sounds.monster.play()
               $("#gameOverWrapper").show()
             }, 3000)
               setTimeout(function(){
               $(".lose").show()
-              this.state.sounds.monster.play()
             }, 3500)
             setTimeout(function(){
               $("#gameOver").show()
