@@ -80,7 +80,7 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
+                if(this.state.currentCam === this.state.enemyPosition) {
                    newPos = this.state.enemyPosition - 2
                   this.setState({enemyPosition: newPos})
                 } else {
