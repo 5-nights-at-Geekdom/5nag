@@ -98,13 +98,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
           case 3:
@@ -116,13 +116,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
           case 4:
@@ -134,13 +134,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
           case 5:
@@ -152,13 +152,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
           case 6:
@@ -170,13 +170,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
 
