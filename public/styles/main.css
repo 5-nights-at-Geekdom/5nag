@@ -44,6 +44,18 @@
   width: 100vw;
   background-size: cover;
   background-repeat: no-repeat; }
+  #tutorial a {
+    color: #e10000;
+    background-color: black;
+    font-size: 5.5em;
+    text-decoration: none;
+    position: absolute;
+    top: 86%; }
+  #tutorial a:hover {
+    cursor: pointer;
+    background-color: red;
+    color: black;
+    transition: color 0.3s, background-color 0.3s; }
 
 #mainContainer {
   max-width: 100%;
