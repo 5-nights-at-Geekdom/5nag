@@ -12,6 +12,7 @@ const App = () => {
     return (
       <Router>
         <div className="App">
+            <div className="warning">WARNING LOUD NOISES!</div>
           <Route exact={true} path="/" component={ Menu } />
           <Route path="/game" render = {(props) => <Game {...props} thunderstorm={thunderstorm} />}/>
           <Route path="/tutorial" component={ Tutorial } />
