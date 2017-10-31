@@ -80,7 +80,7 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
+                if(this.state.currentCam === this.state.enemyPosition) {
                    newPos = this.state.enemyPosition - 2
                   this.setState({enemyPosition: newPos})
                 } else {
@@ -98,13 +98,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
           case 3:
@@ -116,13 +116,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
           case 4:
@@ -134,13 +134,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
           case 5:
@@ -152,13 +152,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
           case 6:
@@ -170,13 +170,13 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === 1 && this.state.enemyPosition === 2) {
-                   newPos = this.state.enemyPosition - 2
-                  this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
+                  if(this.state.currentCam === this.state.enemyPosition) {
+                     newPos = this.state.enemyPosition - 2
+                    this.setState({enemyPosition: newPos})
+                  } else {
+                     newPos = this.state.enemyPosition - 1
+                    this.setState({enemyPosition: newPos})
+                  }
               }
           break
 
@@ -235,9 +235,9 @@ class Game extends Component {
         if (this.state.enemyPosition === 0) {
             this.state.sounds.creepyBackground.pause()
             clearInterval(this.interval)
+
             $("#gameBackground").animate({opacity: '0.2'}, 3000)
             $("#map").animate({opacity: '0.2'}, 3000)
-            this.state.sounds.monster.play()
             setTimeout(function(){
               $("#gameOverWrapper").show()
             }, 3000)
@@ -246,7 +246,7 @@ class Game extends Component {
             }, 3500)
             setTimeout(function(){
               $("#gameOver").show()
-            }, 6500)
+            }, 6000)
         }
 
         // toggles ping cooldown
@@ -326,6 +326,7 @@ class Game extends Component {
         this.interval = setInterval(() => {
             this.gameTimer()
         }, 1000)
+        this.props.thunderstorm.pause()
         this.state.sounds.creepyBackground.play()
     }
 
