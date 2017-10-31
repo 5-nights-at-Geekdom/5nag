@@ -44,6 +44,18 @@
   width: 100vw;
   background-size: cover;
   background-repeat: no-repeat; }
+  #tutorial a {
+    color: #e10000;
+    background-color: black;
+    font-size: 5.5em;
+    text-decoration: none;
+    position: absolute;
+    top: 86%; }
+  #tutorial a:hover {
+    cursor: pointer;
+    background-color: red;
+    color: black;
+    transition: color 0.3s, background-color 0.3s; }
 
 #mainContainer {
   max-width: 100%;
@@ -130,9 +142,9 @@
   background-color: lime; }
 
 #ping.clicked {
-  -webkit-animation: changePing 15s;
-  -moz-animation: changePing 15s;
-  animation: changePing 15s; }
+  -webkit-animation: changePing 40s;
+  -moz-animation: changePing 40s;
+  animation: changePing 40s; }
 
 @-webkit-keyframes changePing {
   from {
@@ -169,6 +181,26 @@
   overflow: auto;
   display: none;
   animation: jumpscare .5s linear alternate forwards; }
+
+@-webkit-keyframes jumpscare {
+  0% {
+    left: -700px; }
+  50% {
+    left: 25px;
+    transform: scale(2, 1.5) rotate(5deg); }
+  100% {
+    left: 35px;
+    transform: scale(2, 1.5); } }
+
+@-moz-keyframes jumpscare {
+  0% {
+    left: -700px; }
+  50% {
+    left: 25px;
+    transform: scale(2, 1.5) rotate(5deg); }
+  100% {
+    left: 35px;
+    transform: scale(2, 1.5); } }
 
 @keyframes jumpscare {
   0% {

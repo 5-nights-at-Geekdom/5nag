@@ -9,7 +9,9 @@ class Tutorial extends Component {
 
     render(){
       return (
-            <div id="tutorial"></div>
+            <div id="tutorial">
+              <Link to={'/game'}>Start Game</Link>
+            </div>
       )
     }
 }
