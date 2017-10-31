@@ -1,15 +1,3 @@
-Agenda Items:
-	create and add win modal
-	more sounds
-	?possible bonus level?
-	style death screen
-	style level win screen
-	update enemy pictures
-	link geekdom on popup modal
-	and DEPLOY TO PRODUCTION
-	to be continued..
-
-
 
 To Get Up and Running
   - Clone the repo from https://github.com/5-nights-at-Geekdom/5nag
