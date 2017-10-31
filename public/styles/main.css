@@ -20,9 +20,9 @@
   position: relative;
   width: 100vw; }
   .menu__box ul {
-    left: 5em;
+    left: 4em;
     position: absolute;
-    top: 70%;
+    top: 80%;
     transform: translateY(-50%); }
     .menu__box ul li {
       text-transform: uppercase; }
@@ -30,12 +30,20 @@
         background-color: black;
         display: inline-block;
         padding: 1em 2em;
+        margin: 1em;
         transition: color 0.3s, background-color 0.3s; }
       .menu__box ul li a:hover {
         cursor: pointer;
         background-color: red;
         color: black;
         transition: color 0.3s, background-color 0.3s; }
+
+#tutorial {
+  background-image: url(/img/tutorial.png);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 #mainContainer {
   max-width: 100%;
