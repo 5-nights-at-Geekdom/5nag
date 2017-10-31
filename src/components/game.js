@@ -69,10 +69,11 @@ class Game extends Component {
     /************* ENEMY MOVEMENT ***************/
 
     enemyMovement(){
-      var newPos = Math.floor(Math.random()*6) + 1
+      var newPos
        switch (this.state.level) {
           case 1:
               if(this.state.counter < 6){
+                newPos = Math.floor(Math.random()*6) + 1
                  while(newPos === this.state.currentCam){
                     newPos = Math.floor(Math.random()*6) + 1
                  }
@@ -80,13 +81,11 @@ class Game extends Component {
                  this.setState({counter: newCount,enemyPosition: newPos})
 
               }else {
-                if(this.state.currentCam === this.state.enemyPosition) {
-                   newPos = this.state.enemyPosition - 2
+                  newPos = this.state.enemyPosition - 1
+                  if(newPos === this.state.currentCam){
+                    newPos = this.state.enemyPosition - 2
+                 }
                   this.setState({enemyPosition: newPos})
-                } else {
-                   newPos = this.state.enemyPosition - 1
-                  this.setState({enemyPosition: newPos})
-                }
               }
           break
           case 2:
@@ -238,6 +237,7 @@ class Game extends Component {
 
             $("#gameBackground").animate({opacity: '0.2'}, 3000)
             $("#map").animate({opacity: '0.2'}, 3000)
+            this.state.sounds.monster.play()
             setTimeout(function(){
               $("#gameOverWrapper").show()
             }, 3000)
@@ -327,6 +327,7 @@ class Game extends Component {
             this.gameTimer()
         }, 1000)
         this.props.thunderstorm.pause()
+        this.state.sounds.creepyBackground.currentTime = 0
         this.state.sounds.creepyBackground.play()
     }
 
