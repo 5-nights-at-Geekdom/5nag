@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Menu from './components/menu';
 import Game from './components/game';
 import Tutorial from './components/tutorial';
+import Credits from './components/credits';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <Route exact={true} path="/" component={ Menu } />
           <Route path="/game" render = {(props) => <Game {...props} thunderstorm={thunderstorm} />}/>
           <Route path="/tutorial" component={ Tutorial } />
+          <Route path="/credits" component={ Credits } />
         </div>
       </Router>
     );

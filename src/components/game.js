@@ -327,6 +327,7 @@ class Game extends Component {
             this.gameTimer()
         }, 1000)
         this.props.thunderstorm.pause()
+        this.state.sounds.creepyBackground.currentTime = 0
         this.state.sounds.creepyBackground.play()
     }
 
