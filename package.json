@@ -24,5 +24,6 @@
     "gh-pages": "^1.0.0",
     "node-sass": "^4.5.3"
   },
-  "homepage": "https://5-nights-at-geekdom.github.io/5nag/"
+
+  "homepage": "https://5nightsatgeekdom.surge.sh"
 }

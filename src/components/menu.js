@@ -8,6 +8,7 @@ const menu = () => {
         <ul>
           <li>
             <Link to={'/game'}>Start Game</Link>
+            <Link to={'/tutorial'}>Tutorial</Link>
           </li>
         </ul>
       </div>

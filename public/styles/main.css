@@ -20,9 +20,9 @@
   position: relative;
   width: 100vw; }
   .menu__box ul {
-    left: 5em;
+    left: 4em;
     position: absolute;
-    top: 70%;
+    top: 80%;
     transform: translateY(-50%); }
     .menu__box ul li {
       text-transform: uppercase; }
@@ -30,12 +30,20 @@
         background-color: black;
         display: inline-block;
         padding: 1em 2em;
+        margin: 1em;
         transition: color 0.3s, background-color 0.3s; }
       .menu__box ul li a:hover {
         cursor: pointer;
         background-color: red;
         color: black;
         transition: color 0.3s, background-color 0.3s; }
+
+#tutorial {
+  background-image: url(/img/tutorial.png);
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 #mainContainer {
   max-width: 100%;
@@ -144,42 +152,46 @@
   to {
     background-color: lime; } }
 
+@font-face {
+  font-family: "creepyFont";
+  src: url("./fonts/frank_knows.ttf"); }
+
 #deathAnimation {
   background-image: url(/img/death0.png);
-  background-size: 200px;
+  background-size: 85%;
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1;
-  left: 600px;
-  top: 350px;
-  width: 250px;
-  height: 250px;
+  left: -700px;
+  top: 166px;
+  width: 1000px;
+  height: 100%;
   overflow: auto;
   display: none;
   animation: jumpscare .5s linear alternate forwards; }
 
 @keyframes jumpscare {
   0% {
-    transform: rotate(0deg); }
-  25% {
-    transform: rotate(-45deg) scale(2, 2); }
+    left: -700px; }
   50% {
-    transform: rotate(45deg) scale(3, 3); }
-  75% {
-    transform: rotate(-45deg) scale(3, 3); }
+    left: 25px;
+    transform: scale(2, 1.5) rotate(5deg); }
   100% {
-    transform: rotate(45deg) scale(4, 4); } }
+    left: 35px;
+    transform: scale(2, 1.5); } }
 
 #gameOver {
+  font-family: "creepyFont";
   position: absolute;
   background-color: black;
   text-align: center;
   color: red;
-  font-size: 10em;
+  font-size: 5em;
   width: 100%;
   height: 100%;
   display: none;
-  z-index: 2; }
+  z-index: 2;
+  padding-top: 3em; }
 
 #gameOverWrapper {
   position: absolute;
@@ -190,17 +202,16 @@
   display: none;
   background-color: transparent; }
 
-#menuWrapper {
-  display: inline-block;
-  padding: 1em 2em; }
+#toMenuWrapper {
+  padding-top: 1em; }
 
-#menu {
+.menu {
   background-color: black;
   display: inline-block;
-  padding: 1em 2em;
+  padding: 0em 0em;
   transition: color 0.3s, background-color 0.3s; }
 
-#menu:hover {
+.menu:hover {
   cursor: pointer;
   background-color: red;
   color: black;
