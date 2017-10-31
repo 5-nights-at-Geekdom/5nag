@@ -237,8 +237,8 @@ class Game extends Component {
             clearInterval(this.interval)
             $("#gameBackground").animate({opacity: '0.2'}, 3000)
             $("#map").animate({opacity: '0.2'}, 3000)
-            setTimeout(function(){
             this.state.sounds.monster.play()
+            setTimeout(function(){
               $("#gameOverWrapper").show()
             }, 3000)
               setTimeout(function(){
